@@ -53,6 +53,10 @@
     $container['homeController'] = function($container){
      return new \App\controllers\homeController($container);
     };
+    // Add homeController instance to container
+    $container['authController'] = function($container){
+     return new \App\controllers\authController($container);
+    };
 
    // Pull in all the routes
    require __DIR__ . "/../app/routes.php";

@@ -135,7 +135,6 @@ header .profile-container a:hover{
 }
  #rememberMe{
   margin-bottom:20px;
-
 }
 .rememberMe{
   text-align: left;
@@ -157,4 +156,62 @@ header .profile-container a:hover{
 }
 .close span:hover{
   color:#555;
+}
+/* ++++++++++++
+  Sign Up Section
++++++++++++++*/
+.signup{
+  margin-top:105px;
+}
+.signup h2{
+  color:#6e9c40;
+  text-align: center;
+}
+.signup form{
+  border-top: solid 1px #d7d7d7;
+  width: 50%;
+  margin:auto;
+  padding:20px;
+}
+.input-container input{
+  width:84%;
+  display: inline-block;
+  height: 30px;
+  text-indent: 1em;
+  font-size: 1.1em;
+  color: #555;
+}
+.input-container label{
+  width: 15%;
+  margin-top:20px;
+  display: inline-block;
+  color:#555;
+  padding:5px 0px;
+}
+.register-button{
+  padding: auto;
+  text-align: center;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.register-button button{
+  border:none;
+  background-color:#6e9c40;
+  padding: 10px 60px;
+  color:#fff;
+  font-size: 1.2em;
+}
+.register-button button:hover{
+  background-color: #555;
+}
+.error-messages{
+  padding-top:5px;
+  padding-left:18%;
+  color:#bcb001;
+}
+.error-input{
+  border-top: solid 2px #888;
+  border-left: solid 2px #888;
+  border-bottom: solid 1px #bcb001;
+  border-right: solid 1px #bcb001;
 }

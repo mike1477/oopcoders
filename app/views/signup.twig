@@ -1,0 +1,32 @@
+{% extends "templates/app.twig" %}
+
+{% block content %}
+
+<div class="signup">
+  <h2>Register with OOPCoders</h2>
+  <form action="/action_page.php">
+    <div class="input-container">
+      <label for="email">Email : </label><input type="text" value="" name="email" id="email" class="error-input" placeholder="Enter valid email">
+    </div>
+    <div class="error-messages">
+      <small>Put errors here</small>
+    </div>
+    <div class="input-container">
+      <label for="name">Name : </label><input type="text" name="name" id="name" value="" placeholder="Full Name">
+    </div>
+    <div class="error-messages">
+      <small>Put errors here</small>
+    </div>
+    <div class="input-container">
+        <label for="password">Password : </label><input type="text" name="password" id="password" value="" placeholder="Password">
+    </div>
+    <div class="error-messages">
+      <small>Put errors here</small>
+    </div>
+    <div class="register-button">
+      <button type="button" name="Register">Register</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
