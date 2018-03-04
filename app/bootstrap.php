@@ -62,6 +62,8 @@
      return new \App\controllers\authController($container);
     };
 
+    $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
+
    // Pull in all the routes
    require __DIR__ . "/../app/routes.php";
 
