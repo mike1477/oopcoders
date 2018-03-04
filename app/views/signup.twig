@@ -4,9 +4,9 @@
 
 <div class="signup">
   <h2>Register with OOPCoders</h2>
-  <form action="/action_page.php">
+  <form action="{{path_for('signup')}}" method="post">
     <div class="input-container">
-      <label for="email">Email : </label><input type="text" value="" name="email" id="email" class="error-input" placeholder="Enter valid email">
+      <label for="email">Email : </label><input type="email" value="" name="email" id="email" class="error-input" placeholder="Enter valid email">
     </div>
     <div class="error-messages">
       <small>Put errors here</small>
@@ -18,13 +18,13 @@
       <small>Put errors here</small>
     </div>
     <div class="input-container">
-        <label for="password">Password : </label><input type="text" name="password" id="password" value="" placeholder="Password">
+        <label for="password">Password : </label><input type="password" name="password" id="password" value="" placeholder="Password">
     </div>
     <div class="error-messages">
       <small>Put errors here</small>
     </div>
     <div class="register-button">
-      <button type="button" name="Register">Register</button>
+      <button type="submit">Register</button>
     </div>
   </form>
 </div>
