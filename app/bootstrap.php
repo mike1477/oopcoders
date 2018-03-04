@@ -49,6 +49,10 @@
 
       return $view;
     };
+    // Add validator instance to container
+    $container['validator'] = function($container){
+     return new \App\validation\validator;
+    };
     // Add homeController instance to container
     $container['homeController'] = function($container){
      return new \App\controllers\homeController($container);
