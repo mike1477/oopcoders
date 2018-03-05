@@ -17,7 +17,7 @@
 
       // Validate form info
       $validation = $this->container->validator->validate($request, [
-        'email' => v::noWhitespace()->notEmpty()->email(),
+        'email' => v::noWhitespace()->notEmpty()->email()->emailAvailable(),
         'name'  => v::notEmpty()->alpha(),
         'password' => v::noWhitespace()->notEmpty(),
       ]);

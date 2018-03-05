@@ -2,6 +2,7 @@
    session_start();
 
    use Illuminate\Database\Capsule\Manager as Capsule;
+   use Respect\Validation\Validator as v;
 
    // Create Slim app
     $app = new \Slim\App([
@@ -64,6 +65,9 @@
     // Attach middlewqre
     $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
     $app->add(new \App\Middleware\OldInputMiddleWare($container));
+
+    // Form rules
+    v::with('App\\validation\\rules\\');
 
    // Pull in all the routes
    require __DIR__ . "/../app/routes.php";
