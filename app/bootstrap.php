@@ -61,8 +61,9 @@
     $container['authController'] = function($container){
      return new \App\controllers\authController($container);
     };
-
+    // Attach middlewqre
     $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
+    $app->add(new \App\Middleware\OldInputMiddleWare($container));
 
    // Pull in all the routes
    require __DIR__ . "/../app/routes.php";

@@ -6,7 +6,7 @@
   <h2>Register with OOPCoders</h2>
   <form action="{{path_for('signup')}}" method="post">
     <div class="input-container">
-      <label for="email">Email : </label><input type="email" value="" name="email" id="email" class="{{ errors.email ? 'error-input': ''}}" placeholder="Enter valid email">
+      <label for="email">Email : </label><input type="email" value="{{ old.email }}" name="email" id="email" class="{{ errors.email ? 'error-input': ''}}" placeholder="Enter valid email">
     </div>
     {% if errors.email %}
     <div class="error-messages">
@@ -14,7 +14,7 @@
     </div>
     {% endif %}
     <div class="input-container">
-      <label for="name">Name : </label><input type="text" name="name" id="name" value="" class="{{ errors.name ? 'error-input': ''}}" placeholder="Full Name">
+      <label for="name">Name : </label><input type="text" name="name" id="name" value="{{ old.name}}" class="{{ errors.name ? 'error-input': ''}}" placeholder="Full Name">
     </div>
     {% if errors.name %}
     <div class="error-messages">
