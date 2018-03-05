@@ -9,7 +9,6 @@
   class authController extends Controller
   {
     public function getSignUp($request, $response){
-
       return $this->container->view->render($response, 'signup.twig');
     }
 
