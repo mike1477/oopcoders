@@ -188,20 +188,20 @@ header .profile-container a:hover{
   color:#555;
   padding:5px 0px;
 }
-.register-button{
+.form-button{
   padding: auto;
   text-align: center;
   margin-top:20px;
   margin-bottom:20px;
 }
-.register-button button{
+.form-button button{
   border:none;
   background-color:#6e9c40;
   padding: 10px 60px;
   color:#fff;
   font-size: 1.2em;
 }
-.register-button button:hover{
+.form-button button:hover{
   background-color: #555;
 }
 .error-messages{
@@ -214,4 +214,18 @@ header .profile-container a:hover{
   border-left: solid 2px #888;
   border-bottom: solid 1px #bcb001;
   border-right: solid 1px #bcb001;
+}
+/* ++++++++++++
+  Sign In Section
++++++++++++++*/
+.checkbox-container{
+  text-align: center;
+  padding-top:10px;
+}
+.login-button{
+  margin-top:0px;
+}
+.login-forgot{
+  margin-top:0px;
+  text-align: center;
 }

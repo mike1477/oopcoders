@@ -3,22 +3,14 @@
 {% block content %}
 
 <div class="signup">
-  <h2>Register with OOPCoders</h2>
-  <form action="{{path_for('signup')}}" method="post">
+  <h2>Sign in to OOPCoders</h2>
+  <form action="{{path_for('signin')}}" method="post">
     <div class="input-container">
       <label for="email">Email : </label><input type="email" value="{{ old.email }}" name="email" id="email" class="{{ errors.email ? 'error-input': ''}}" placeholder="Enter valid email">
     </div>
     {% if errors.email %}
     <div class="error-messages">
       <small>{{ errors.email | first }}</small>
-    </div>
-    {% endif %}
-    <div class="input-container">
-      <label for="name">Name : </label><input type="text" name="name" id="name" value="{{ old.name}}" class="{{ errors.name ? 'error-input': ''}}" placeholder="Full Name">
-    </div>
-    {% if errors.name %}
-    <div class="error-messages">
-      <small>{{ errors.name | first }}</small>
     </div>
     {% endif %}
     <div class="input-container">
@@ -29,8 +21,15 @@
       <small>{{ errors.password | first }}</small>
     </div>
     {% endif %}
-    <div class="form-button">
-      <button type="submit">Register</button>
+    <div class="checkbox-container">
+      <label for="rememberMe" class="rememberMe">Remember Me </label><input type="checkbox" name="rememberMe" value="" id="rememberMe"><br>
+    </div>
+    <div class="form-button login-button">
+      <button type="submit">Sign In</button>
+    </div>
+    <div class="forgot-password login-forgot">
+      <a href="forgot-password.php">Forgot Password</a>
+      <a href="register-account.php">Register New Account</a>
     </div>
     {{ csrf.field | raw }}
   </form>

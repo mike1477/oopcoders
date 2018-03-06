@@ -32,5 +32,14 @@
         ]);
         //Go Home
         return $response->withRedirect($this->container->router->pathFor('home'));
-      }
+    }
+
+    public function getSignIn($request, $response){
+        return $this->container->view->render($response, 'signin.twig');
+    }
+
+    public function postSignIn($request, $response){
+
+
+    }
   }
