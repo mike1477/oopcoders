@@ -65,6 +65,9 @@
     $container['csrf'] = function ($container) {
       return new \Slim\Csrf\Guard;
      };
+     $container['auth'] = function ($container) {
+       return new \App\auth\Auth;
+      };
     // Attach middlewqre
     $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
     $app->add(new \App\Middleware\OldInputMiddleWare($container));

@@ -40,6 +40,15 @@
 
     public function postSignIn($request, $response){
 
+        $auth = $this->container->auth->attempt(
+          $request->getParam('email'),
+          $request->getParam('password')
+        );
 
+        if(!$auth){
+          return $response->withRedirect($this->container->router->pathFor('signin'));
+        }
+
+          return $response->withRedirect($this->container->router->pathFor('home'));
     }
   }
