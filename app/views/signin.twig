@@ -6,7 +6,7 @@
   <h2>Sign in to OOPCoders</h2>
   <form action="{{path_for('signin')}}" method="post">
     <div class="input-container">
-      <label for="email">Email : </label><input type="email" value="{{ old.email }}" name="email" id="email" class="{{ errors.email ? 'error-input': ''}}" placeholder="Enter valid email">
+      <label for="email">Email : </label><input type="email" value="{{ old.email }}" name="email" class="{{ errors.email ? 'error-input': ''}}" placeholder="Enter valid email">
     </div>
     {% if errors.email %}
     <div class="error-messages">
@@ -14,7 +14,7 @@
     </div>
     {% endif %}
     <div class="input-container">
-        <label for="password">Password : </label><input type="password" name="password" id="password" class="{{ errors.password ? 'error-input': ''}}" value="" placeholder="Password">
+        <label for="password">Password : </label><input type="password" name="password" class="{{ errors.password ? 'error-input': ''}}" value="" placeholder="Password">
     </div>
     {% if errors.password %}
     <div class="error-messages">
@@ -22,14 +22,14 @@
     </div>
     {% endif %}
     <div class="checkbox-container">
-      <label for="rememberMe" class="rememberMe">Remember Me </label><input type="checkbox" name="rememberMe" value="" id="rememberMe"><br>
+      <label for="rememberMe" class="rememberMe">Remember Me </label><input type="checkbox" name="rememberMe" value="" class="rememberMe"><br>
     </div>
     <div class="form-button login-button">
       <button type="submit">Sign In</button>
     </div>
     <div class="forgot-password login-forgot">
       <a href="forgot-password.php">Forgot Password</a>
-      <a href="register-account.php">Register New Account</a>
+      <a href="{{path_for('signup')}}">Register New Account</a>
     </div>
     {{ csrf.field | raw }}
   </form>

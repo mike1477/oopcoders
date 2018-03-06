@@ -122,6 +122,8 @@ header .profile-container a:hover{
   width:100%;
   height: 40px;
   font-size: 20px;
+  border: solid 1px #d7d7d7;
+  text-indent: 1em;
 }
  #submit-button{
   width:100%;
@@ -133,12 +135,10 @@ header .profile-container a:hover{
   width: 70%;
   margin-left:15%;
 }
- #rememberMe{
-  margin-bottom:20px;
-}
 .rememberMe{
   text-align: left;
   color:green;
+  margin-bottom:20px;
 }
 .forgot-password{
   margin-top:40px;
@@ -203,6 +203,7 @@ header .profile-container a:hover{
 }
 .form-button button:hover{
   background-color: #555;
+  cursor: pointer;
 }
 .error-messages{
   padding-top:5px;

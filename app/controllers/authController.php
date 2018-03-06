@@ -40,6 +40,12 @@
 
     public function postSignIn($request, $response){
 
+        //Validate form info
+        $validation = $this->container->validator->validate($request, [
+          'email' => v::noWhitespace()->notEmpty()->email()->emailAvailable(),
+          'password' => v::noWhitespace()->notEmpty(),
+        ]);
+
         $auth = $this->container->auth->attempt(
           $request->getParam('email'),
           $request->getParam('password')

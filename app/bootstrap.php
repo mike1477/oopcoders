@@ -36,6 +36,10 @@
     $container['db'] = function($container) use ($capsule){
       return $capsule;
     };
+    // Add auth instance to container
+    $container['auth'] = function ($container) {
+      return new \App\auth\Auth;
+     };
 
     // Register Twig View helper
     $container['view'] = function($container){
@@ -47,6 +51,11 @@
          $container->router,
          $container->request->getUri()
       ));
+      //Make auth a global variable so we can use it in the view
+      $view->getEnvironment()->addGlobal('auth',[
+                'check' => $container->auth->check(),
+                'user'  => $container->auth->user(),
+        ] );
 
       return $view;
     };
@@ -65,9 +74,7 @@
     $container['csrf'] = function ($container) {
       return new \Slim\Csrf\Guard;
      };
-     $container['auth'] = function ($container) {
-       return new \App\auth\Auth;
-      };
+
     // Attach middlewqre
     $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
     $app->add(new \App\Middleware\OldInputMiddleWare($container));
