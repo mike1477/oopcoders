@@ -30,6 +30,10 @@
           'name' => $request->getParam('name'),
           'password' => password_hash($request->getParam('password'), PASSWORD_DEFAULT),
         ]);
+
+       // Authenticate User and sign them in
+       $this->container->auth->attempt($user->email, $request->getParam('password'));
+
         //Go Home
         return $response->withRedirect($this->container->router->pathFor('home'));
     }
