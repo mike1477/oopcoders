@@ -21,6 +21,9 @@ body{
   line-height: 1;
   overflow-x: hidden;
 }
+.container{
+  padding-top:90px;
+}
 /* ++++++++++++
     Header
 +++++++++++++*/
@@ -160,9 +163,6 @@ header .profile-container a:hover{
 /* ++++++++++++
   Sign Up Section
 +++++++++++++*/
-.signup{
-  margin-top:105px;
-}
 .signup h2{
   color:#6e9c40;
   text-align: center;
@@ -229,4 +229,19 @@ header .profile-container a:hover{
 .login-forgot{
   margin-top:0px;
   text-align: center;
+}
+/* ++++++++++++
+  Flash messages section
++++++++++++++*/
+.flash-outer{
+  width: 50%;
+  margin:auto;
+  padding: 1px 10px;
+  color:#fff;
+}
+.flash-warning{
+    background-color: #bcb001;
+}
+.flash-success{
+  background-color:#6e9c40;
 }

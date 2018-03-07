@@ -40,6 +40,11 @@
     $container['auth'] = function ($container) {
       return new \App\auth\Auth;
      };
+     //Add flash
+     $container['flash'] = function () {
+       return new \Slim\Flash\Messages();
+     };
+
 
     // Register Twig View helper
     $container['view'] = function($container){
@@ -56,6 +61,8 @@
                 'check' => $container->auth->check(),
                 'user'  => $container->auth->user(),
         ] );
+
+        $view->getEnvironment()->addGlobal('flash', $container->flash );
 
       return $view;
     };
@@ -74,6 +81,7 @@
     $container['csrf'] = function ($container) {
       return new \Slim\Csrf\Guard;
      };
+
 
     // Attach middlewqre
     $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));

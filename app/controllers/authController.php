@@ -31,6 +31,9 @@
           'password' => password_hash($request->getParam('password'), PASSWORD_DEFAULT),
         ]);
 
+       // Send flash message to user
+       $this->container->flash->addMessage('success', 'You have been signed up!');
+
        // Authenticate User and sign them in
        $this->container->auth->attempt($user->email, $request->getParam('password'));
 
@@ -46,7 +49,7 @@
 
         //Validate form info
         $validation = $this->container->validator->validate($request, [
-          'email' => v::noWhitespace()->notEmpty()->email()->emailAvailable(),
+          'email' => v::noWhitespace()->notEmpty()->email(),
           'password' => v::noWhitespace()->notEmpty(),
         ]);
 
@@ -56,13 +59,18 @@
         );
 
         if(!$auth){
+          // Send flash message to user
+          $this->container->flash->addMessage('error', 'Incorrect sign in information. Please check the login information and try again.');
           return $response->withRedirect($this->container->router->pathFor('signin'));
         }
-
-          return $response->withRedirect($this->container->router->pathFor('home'));
+         // Send flash message to user
+         $this->container->flash->addMessage('success', 'Welcome back ! , You are signed in.');
+         return $response->withRedirect($this->container->router->pathFor('home'));
     }
 
     public function getSignOut($request, $response){
+      // Send flash message to user
+        $this->container->flash->addMessage('success', 'You are logged out.');
         $this->container->auth->logout();
         return $response->withRedirect($this->container->router->pathFor('home'));
     }
