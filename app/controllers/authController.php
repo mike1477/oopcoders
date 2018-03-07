@@ -61,4 +61,9 @@
 
           return $response->withRedirect($this->container->router->pathFor('home'));
     }
+
+    public function getSignOut($request, $response){
+        $this->container->auth->logout();
+        return $response->withRedirect($this->container->router->pathFor('home'));
+    }
   }

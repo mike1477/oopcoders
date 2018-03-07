@@ -7,3 +7,5 @@ $app->post('/auth/signup', 'authController:postSignUp');
 //Login user
 $app->get('/auth/signin', 'authController:getSignIn')->setName('signin');
 $app->post('/auth/signin', 'authController:postSignIn');
+//Logout user
+$app->get('/auth/signout', 'authController:getSignOut')->setName('signout');
