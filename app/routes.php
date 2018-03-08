@@ -1,14 +1,24 @@
 <?php
 
+use App\middleware\authMiddleware;
+use App\middleware\guestMiddleware;
+
 $app->get('/', 'homeController:index')->setName('home')->setName('home');
-//Register new user
-$app->get('/auth/signup', 'authController:getSignUp')->setName('signup');
-$app->post('/auth/signup', 'authController:postSignUp');
-//Login user
-$app->get('/auth/signin', 'authController:getSignIn')->setName('signin');
-$app->post('/auth/signin', 'authController:postSignIn');
-//Logout user
-$app->get('/auth/signout', 'authController:getSignOut')->setName('signout');
-//Change password
-$app->get('/auth/changepassword', 'passwordController:getChangedPassword')->setName('changepassword');
-$app->post('/auth/changepassword', 'passwordController:postChangedPassword');
+
+$app->group('', function(){
+  //Register new user
+  $this->get('/auth/signup', 'authController:getSignUp')->setName('signup');
+  $this->post('/auth/signup', 'authController:postSignUp');
+  //Login user
+  $this->get('/auth/signin', 'authController:getSignIn')->setName('signin');
+  $this->post('/auth/signin', 'authController:postSignIn');
+})->add(new GuestMiddleware($container));
+
+
+$app->group('' , function(){
+  //Logout user
+  $this->get('/auth/signout', 'authController:getSignOut')->setName('signout');
+  //Change password
+  $this->get('/auth/changepassword', 'passwordController:getChangedPassword')->setName('changepassword');
+  $this->post('/auth/changepassword', 'passwordController:postChangedPassword');
+})->add(new AuthMiddleware($container));
