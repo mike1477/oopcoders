@@ -167,32 +167,35 @@ header .profile-container a:hover{
   width: 95%;
   margin: auto;
 }
+.light-slider-outer>div{
+  margin-top: 20px;
+}
 .light-slider-outer h3{
   color: #555;
 }
-#light-slider{
+.light-slider{
 	list-style: none outside none;
 	padding-left: 0;
   margin: 0px;
  }
- #light-slider li{
+ .light-slider li{
    position: relative;
  }
- #light-slider>li>div{
+ .light-slider>li>div{
    padding:10px;
    background-color: #fff;
  }
- #light-slider li div p{
+ .light-slider li div p{
    font-size: .9em;
    color: #888;
    margin-bottom:1px;
    margin-top:2px;
  }
- #light-slider li figure{
+ .light-slider li figure{
    width:100%;
    margin: auto;
  }
- #light-slider li figure a{
+ .light-slider li figure a{
    position: relative;
    width:100%;
    display: block;
@@ -201,7 +204,7 @@ header .profile-container a:hover{
    background-size: auto 100%;
 
  }
- #light-slider li figure img{
+ .light-slider li figure img{
    width:100%;
  }
 

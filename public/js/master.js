@@ -20,7 +20,7 @@ $(document).ready(function(){
     });
   });
 
-  $("#light-slider").lightSlider({
+  $(".light-slider").lightSlider({
         item:5,
         loop:false,
         slideMove:2,

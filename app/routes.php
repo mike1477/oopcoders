@@ -12,6 +12,7 @@ $app->group('', function(){
   //Login user
   $this->get('/auth/signin', 'authController:getSignIn')->setName('signin');
   $this->post('/auth/signin', 'authController:postSignIn');
+
 })->add(new GuestMiddleware($container));
 
 
