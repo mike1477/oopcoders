@@ -18,8 +18,10 @@
              </figure>
              <div>
                <h4>{{ video.title }}</h4>
-               <p>Published : {{ video.created_at }}</p>
-               <p>{{video.views}} Views</p>
+               <div class="publish-views">
+                 <p>Published : {{ video.created_at }}</p>
+                 <p>{{video.views}} Views</p>
+               </div>
              </div>
            </li>
          {% endfor %}

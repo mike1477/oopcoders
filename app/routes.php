@@ -3,7 +3,7 @@
 use App\middleware\authMiddleware;
 use App\middleware\guestMiddleware;
 
-$app->get('/', 'homeController:index')->setName('home')->setName('home');
+$app->get('/', 'homeController:index')->setName('home');
 
 $app->group('', function(){
   //Register new user
