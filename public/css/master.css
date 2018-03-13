@@ -134,6 +134,9 @@ header .profile-container a:hover{
   padding-top:5px;
   padding-bottom:5px;
 }
+.login-slide-outer{
+  z-index: 101;
+}
 .login-slide-outer form{
   width: 70%;
   margin-left:15%;
@@ -160,6 +163,96 @@ header .profile-container a:hover{
 .close span:hover{
   color:#555;
 }
+/* ++++++++++++
+  Home page slider
++++++++++++++*/
+.light-slider-outer{
+  width: 95%;
+  margin: auto;
+}
+.light-slider-outer>div{
+  margin-top: 20px;
+}
+.light-slider-outer h3{
+  color: #555;
+}
+.light-slider h4{
+  fort-size: .6em;
+  margin-top: 0px;
+}
+.light-slider{
+	list-style: none outside none;
+	padding-left: 0;
+  margin: 0px;
+  height: 220px !important;
+ }
+ .light-slider li{
+   position: relative;
+   height: 220px;
+
+ }
+ .light-slider>li>div{
+   padding:10px;
+   background-color: #fff;
+   height: 100%;
+ }
+ .publish-views{
+   position: absolute;
+   bottom: 0px;
+ }
+ .publish-views p{
+   font-size: .9em;
+   color: #888;
+   margin-bottom:1px;
+   margin-top:2px;
+ }
+ .light-slider li figure{
+   width:100%;
+   margin: auto;
+ }
+ .light-slider li figure a{
+   position: relative;
+   width:100%;
+   display: block;
+   height: 110.359px;
+   background-repeat: no-repeat;
+   background-size: auto 100%;
+
+ }
+ .light-slider li figure img{
+   width:100%;
+ }
+
+ .background span{
+   display: block;
+   position: absolute;
+   color:rgba(255,255,255,0);
+   background-color: rgba(255,255,255,0);
+   -webkit-transition: background-color 1s, color 1s; /* Safari */
+    transition: background-color 1s, color 1s;
+   top: 0px;
+   left:0px;
+   right:0px;
+   bottom:0px;
+   font-size: 4em;
+   display: block;
+   margin: auto;
+   text-align: center;
+   padding-top:20px;
+ }
+ .background span:hover{
+   color:rgba(255,255,255,.9);
+   background-color: rgba(255,255,255,.5);
+ }
+ .background p{
+   background-color:#000;
+   color:#fff;
+   padding:1px 3px;
+   width: 50px;
+   text-align: center;
+   margin-left: 5px;
+ }
+
 /* ++++++++++++
   Sign Up Section
 +++++++++++++*/
