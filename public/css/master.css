@@ -27,7 +27,7 @@ body{
 /* ++++++++++++
     Header
 +++++++++++++*/
-header{
+#main-header{
   position: fixed;
   left: 0;
   right: 0;
@@ -40,12 +40,12 @@ header{
   padding-left:30px;
   padding-right:30px;
 }
-header .logo{
+#main-header .logo{
   width:25%;
   display: inline-block;
   padding-top: 10px;
 }
-header .logo a{
+#main-header .logo a{
   font-size: 1.3em;
   color: #6e9c40;
   padding-top:10px;
@@ -53,29 +53,29 @@ header .logo a{
   display: inline-block;
   text-decoration: none;
 }
-header .logo a:hover{
+#main-header .logo a:hover{
   color:#888;
 }
-header .logo i{
+#main-header .logo i{
   padding-left: 10px;
   font-size: 100;
   font-size:25px;
 }
-header .search-outer{
+#main-header .search-outer{
   width:58%;
   display: inline-block;
 }
-header .search-outer form{
+#main-header .search-outer form{
   width:100%;
 }
-header .search-outer form button{
+#main-header .search-outer form button{
   border:none;
   background-color: #fff;
   font-size: 1.5em;
   font-weight: 100;
   color:#888;
 }
-header .search-outer form input{
+#main-header .search-outer form input{
   height: 40px;
   font-size: 1.2em;
   width:80%;
@@ -83,7 +83,7 @@ header .search-outer form input{
   border-left: solid 1px #d7d7d7;
   text-indent: 10px;
 }
-header .profile-container{
+#main-header .profile-container{
   width: 15%;
   display: inline-block;
   text-align:right;
@@ -91,14 +91,14 @@ header .profile-container{
   border-left: solid 1px #d7d7d7;
   height: 56px;
 }
-header .profile-container span{
+#main-header .profile-container span{
   margin-right: 10px;
 }
-header .profile-container a{
+#main-header .profile-container a{
   text-decoration: none;
   color:#888;
 }
-header .profile-container a:hover{
+#main-header .profile-container a:hover{
   color: #6e9c40;
 }
 .user-icon{
@@ -252,7 +252,132 @@ header .profile-container a:hover{
    text-align: center;
    margin-left: 5px;
  }
-
+ /* +++++++++++++++++++++++++++++=====================================================================
+   video page
+ +++++++++++++++++++++++++++++++=====================================================================*/
+ .display-outer{
+   width: 95%;
+   margin: auto;
+   position: relative;
+ }
+ .video-container{
+   position: absolute;
+   display: inline-block;
+   width: 60%;
+   height: 520px;
+ }
+ .video-container header{
+   background-color: #fff;
+   padding: 10px 0px;
+   margin-top: 10px;
+ }
+ .video-container header h2{
+   font-size: 1.8em;
+   margin-top: 0px;
+   margin-bottom: 0px;
+ }
+ .video-container header p{
+   color : #888;
+   display: inline-block;
+   width:50%;
+ }
+ .video-outer{
+   width: 100%;
+   margin-top: 10px;
+   background-color:#fff;
+ }
+ .video-icons{
+   width: 48%;
+   display: inline-block;
+   text-align: right;
+ }
+ .video-icons a{
+   color: #888;
+   font-size: 1.5em;
+ }
+ .video-icons a:hover{
+   color: #6e9c40;
+ }
+ /* ++++++++++++
+   video page vertical slider
+ +++++++++++++*/
+ .vertical-light-slider-outer{
+   position: absolute;
+   right: 0px;
+   top:0px;
+    width : 39%;
+ }
+.vertical-light-slider li{
+  padding-top:10px;
+  padding-bottom:10px;
+  position: relative;
+}
+.vertical-light-slider li figure{
+  position: absolute;
+  left: 0px;
+  display: inline-block;
+  width:100%;
+  margin: auto;
+}
+.vertical-light-slider li figure a{
+  display: inline-block;
+  border: solid 1px #f5f5f5;
+  width:50%;
+  display: block;
+  height: 110.359px;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+.content{
+  position: absolute;
+  right: 10px;
+  left: 250px;
+  bottom: -20px;
+  top:10px;
+  display: inline-block;
+  height: 110px;
+}
+.content h4{
+  margin-top: 2px;
+}
+.content div{
+  position: absolute;
+  bottom: 0px;
+  width:100%;
+}
+.content p{
+  margin-top:0px;
+  margin-bottom:2px;
+}
+.background-vertical span{
+  display: block;
+  position: absolute;
+  color:rgba(255,255,255,0);
+  background-color: rgba(255,255,255,0);
+  -webkit-transition: background-color 1s, color 1s; /* Safari */
+   transition: background-color 1s, color 1s;
+  top: 0px;
+  left:0px;
+  right:50%;
+  bottom:0px;
+  font-size: 4em;
+  display: block;
+  margin: auto;
+  text-align: center;
+  padding-top:20px;
+}
+.background-vertical span:hover{
+  color:rgba(255,255,255,.9);
+  background-color: rgba(255,255,255,.5);
+}
+.background-vertical p{
+  background-color:#000;
+  color:#fff;
+  padding:1px 3px;
+  width: 50px;
+  text-align: center;
+  margin-left: 5px;
+}
 /* ++++++++++++
   Sign Up Section
 +++++++++++++*/

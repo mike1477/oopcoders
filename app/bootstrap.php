@@ -74,7 +74,11 @@
     $container['homeController'] = function($container){
      return new \App\controllers\homeController($container);
     };
-    // Add homeController instance to container
+    // Add videoController instance to container
+    $container['videoController'] = function($container){
+     return new \App\controllers\videoController($container);
+    };
+    // Add authController instance to container
     $container['authController'] = function($container){
      return new \App\controllers\authController($container);
     };

@@ -23,7 +23,7 @@
         rtl: false,
         adaptiveHeight: false,
         vertical: false,
-        verticalHeight: 500,
+        verticalHeight: 600,
         vThumbWidth: 100,
         thumbItem: 10,
         pager: true,
