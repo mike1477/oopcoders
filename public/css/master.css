@@ -348,6 +348,8 @@ body{
 .content p{
   margin-top:0px;
   margin-bottom:2px;
+  font-size: .9em;
+  color:#555;
 }
 .background-vertical span{
   display: block;
@@ -377,6 +379,9 @@ body{
   width: 50px;
   text-align: center;
   margin-left: 5px;
+}
+#filler{
+  height: 200px;
 }
 /* ++++++++++++
   Sign Up Section

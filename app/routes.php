@@ -4,7 +4,7 @@ use App\middleware\authMiddleware;
 use App\middleware\guestMiddleware;
 
 $app->get('/', 'homeController:index')->setName('home');
-$app->get('/video', 'videoController:index')->setName('video');
+$app->get('/video/{video_id}/{category_id}', 'videoController:index')->setName('video');
 
 $app->group('', function(){
   //Register new user

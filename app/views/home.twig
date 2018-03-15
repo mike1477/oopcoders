@@ -9,7 +9,7 @@
          {% for video in videos %}
            <li>
              <figure>
-               <a href="{{ base_url() }}/video/{{video.id}}" style="background-image: url('{{ video.thumbnail }}')">
+               <a href="{{ base_url() }}/video/{{video.id}}/{{video.category_id}}" style="background-image: url('{{ video.thumbnail }}')">
                  <div class="background">
                    <span><i class="far fa-play-circle"></i></span>
                    <p>{{ video.length}}</p>

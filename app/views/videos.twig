@@ -4,8 +4,8 @@
   <div class="display-outer">
     <section class="video-container">
          <header>
-           <h2>This is the title of the video.</h2>
-           <p>Published : March 9 2017 - - 55 Views</p>
+           <h2>{{playing.title}}</h2>
+           <p>Published : {{playing.created_at}} - - {{playing.views}} Views</p>
            <div class="video-icons">
              <a href="#"><i class="fab fa-github-alt"></i></a>
              <a href="#"><i class="fab fa-youtube"></i></a>
@@ -13,7 +13,7 @@
          </header>
          <div class="video-outer">
            <video width="100%" controls >
-             <source src="images/videos/intro.MP4" type="video/mp4">
+             <source src="{{ base_url() }}/{{playing.video}}" type="video/mp4">
              Your browser does not support the video tag.
             </video>
          </div>
@@ -21,188 +21,26 @@
     <section class="vertical-light-slider-outer">
       <div>
         <ul class="vertical-light-slider">
+          {% for cat in slider_cat %}
           <li>
             <figure>
-              <a href="#" style="background-image: url('images/thumbnails/blue-200.jpg')">
+              <a href="{{ base_url() }}/video/{{cat.id}}/{{cat.category_id}}" style="background-image: url('{{ base_url() }}/{{cat.thumbnail}}')">
                 <div class="background-vertical">
                   <span><i class="far fa-play-circle"></i></span>
-                  <p>2:30</p>
+                  <p>{{cat.length}}</p>
                 </div>
               </a>
             </figure>
             <div class="content">
-              <h4>First Slide this thei tei thies tthis tehk First Slide this thei tei </h4>
+              <h4>{{cat.title}}</h4>
               <div>
-                <p>Published : 12/12/2012</p>
-                <p>97 Views</p>
+                <p>Published : {{cat.created_at}}</p>
+                <p>{{cat.views}} Views</p>
               </div>
             </div>
           </li>
-          <li>
-            <figure>
-              <a href="#" style="background-image: url('images/thumbnails/green-200.jpg')">
-                <div class="background-vertical">
-                  <span><i class="far fa-play-circle"></i></span>
-                  <p>2:30</p>
-                </div>
-              </a>
-            </figure>
-            <div class="content">
-              <h4>First Slide this thei tei thies tthis tehk</h4>
-              <p>Published : 12/12/2012</p>
-              <p>97 Views</p>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#" style="background-image: url('images/thumbnails/blue-200.jpg')">
-                <div class="background-vertical">
-                  <span><i class="far fa-play-circle"></i></span>
-                  <p>2:30</p>
-                </div>
-              </a>
-            </figure>
-            <div class="content">
-              <h4>First Slide this thei tei thies tthis tehk</h4>
-              <p>Published : 12/12/2012</p>
-              <p>97 Views</p>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#" style="background-image: url('images/thumbnails/blue-200.jpg')">
-                <div class="background-vertical">
-                  <span><i class="far fa-play-circle"></i></span>
-                  <p>2:30</p>
-                </div>
-              </a>
-            </figure>
-            <div class="content">
-              <h4>First Slide this thei tei thies tthis tehk</h4>
-              <p>Published : 12/12/2012</p>
-              <p>97 Views</p>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#" style="background-image: url('images/thumbnails/blue-200.jpg')">
-                <div class="background-vertical">
-                  <span><i class="far fa-play-circle"></i></span>
-                  <p>2:30</p>
-                </div>
-              </a>
-            </figure>
-            <div class="content">
-              <h4>First Slide this thei tei thies tthis tehk</h4>
-              <p>Published : 12/12/2012</p>
-              <p>97 Views</p>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#" style="background-image: url('images/thumbnails/blue-200.jpg')">
-                <div class="background-vertical">
-                  <span><i class="far fa-play-circle"></i></span>
-                  <p>2:30</p>
-                </div>
-              </a>
-            </figure>
-            <div class="content">
-              <h4>First Slide this thei tei thies tthis tehk</h4>
-              <p>Published : 12/12/2012</p>
-              <p>97 Views</p>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#" style="background-image: url('images/thumbnails/blue-200.jpg')">
-                <div class="background-vertical">
-                  <span><i class="far fa-play-circle"></i></span>
-                  <p>2:30</p>
-                </div>
-              </a>
-            </figure>
-            <div class="content">
-              <h4>First Slide this thei tei thies tthis tehk</h4>
-              <p>Published : 12/12/2012</p>
-              <p>97 Views</p>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#" style="background-image: url('images/thumbnails/green-200.jpg')">
-                <div class="background-vertical">
-                  <span><i class="far fa-play-circle"></i></span>
-                  <p>2:30</p>
-                </div>
-              </a>
-            </figure>
-            <div class="content">
-              <h4>First Slide this thei tei thies tthis tehk</h4>
-              <p>Published : 12/12/2012</p>
-              <p>97 Views</p>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#" style="background-image: url('images/thumbnails/blue-200.jpg')">
-                <div class="background-vertical">
-                  <span><i class="far fa-play-circle"></i></span>
-                  <p>2:30</p>
-                </div>
-              </a>
-            </figure>
-            <div class="content">
-              <h4>First Slide this thei tei thies tthis tehk</h4>
-              <p>Published : 12/12/2012</p>
-              <p>97 Views</p>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#" style="background-image: url('images/thumbnails/blue-200.jpg')">
-                <div class="background-vertical">
-                  <span><i class="far fa-play-circle"></i></span>
-                  <p>2:30</p>
-                </div>
-              </a>
-            </figure>
-            <div class="content">
-              <h4>First Slide this thei tei thies tthis tehk</h4>
-              <p>Published : 12/12/2012</p>
-              <p>97 Views</p>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#" style="background-image: url('images/thumbnails/blue-200.jpg')">
-                <div class="background-vertical">
-                  <span><i class="far fa-play-circle"></i></span>
-                  <p>2:30</p>
-                </div>
-              </a>
-            </figure>
-            <div class="content">
-              <h4>First Slide this thei tei thies tthis tehk</h4>
-              <p>Published : 12/12/2012</p>
-              <p>97 Views</p>
-            </div>
-          </li>
-          <li>
-            <figure>
-              <a href="#" style="background-image: url('images/thumbnails/blue-200.jpg')">
-                <div class="background-vertical">
-                  <span><i class="far fa-play-circle"></i></span>
-                  <p>2:30</p>
-                </div>
-              </a>
-            </figure>
-            <div class="content">
-              <h4>First Slide this thei tei thies tthis tehk</h4>
-              <p>Published : 12/12/2012</p>
-              <p>97 Views</p>
-            </div>
-          </li>
+          {% endfor %}
+          <li id="filler"></li>
         </ul>
       </div>
     </section>
