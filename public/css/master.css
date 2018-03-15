@@ -256,7 +256,8 @@ body{
    video page
  +++++++++++++++++++++++++++++++=====================================================================*/
  .display-outer{
-   width: 95%;
+   width: 90%;
+   height: 550px;
    margin: auto;
    position: relative;
  }
@@ -270,6 +271,7 @@ body{
    background-color: #fff;
    padding: 10px 0px;
    margin-top: 10px;
+   border: solid 1px #d7d7d7;
  }
  .video-container header h2{
    font-size: 1.8em;
@@ -383,6 +385,85 @@ body{
 #filler{
   height: 200px;
 }
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  Comment Section
++++++++++++++*/
+.comment-outer{
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+}
+.comment{
+  background-color: #fff;
+  border: solid 1px #d7d7d7;
+  width: 60%;
+  padding-bottom: 60px;
+}
+.comment h3{
+  color:#555;
+  padding-left: 10px;
+  border-bottom: solid 1px #d7d7d7;
+}
+.comment form{
+  margin:auto;
+}
+.comment form input{
+  float: right;
+  margin-right: 10%;
+  margin-top: 10px;
+  padding:10px;
+  background-color: #6e9c40;
+  color: #fff;
+}
+.comment form input:hover{
+  background-color: #555;
+}
+.comment textarea{
+  background-color: #888;
+  width: 80%;
+  margin-left: 10%;
+}
+.comments{
+  margin-top:40px;
+  background-color: #fff;
+}
+.comments h3{
+
+}
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  Description Section
++++++++++++++*/
+.description-outer{
+  width: 90%;
+  margin: auto;
+  position: relative;
+}
+.description-outer div{
+  background-color: #fff;
+  border: solid 1px #d7d7d7;
+  display: inline-block;
+}
+.description-outer div h3{
+  color:#555;
+  padding-left: 10px;
+  border-bottom: solid 1px #d7d7d7;
+}
+.description-box{
+  width: 60%;
+}
+.description-box p{
+ padding:10px;
+}
+.reference-links-box{
+  width:39%;
+  position: absolute;
+  top:0px;
+  right: 0px;
+}
+.reference-links-box h3{
+
+}
+
 /* ++++++++++++
   Sign Up Section
 +++++++++++++*/
