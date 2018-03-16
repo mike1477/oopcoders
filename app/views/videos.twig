@@ -49,6 +49,7 @@
     <div class="description-box">
         <h3>DESCRIPTION</h3>
         <p>{{playing.description}}</p>
+        <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
     </div>
     <div class="reference-links-box">
         <h3>HELPFUL REFERENCES</h3>
@@ -56,16 +57,36 @@
   </section>
   <section class="comment-outer">
     <div class="comment">
-      <h3>COMMENTS</h3>
+      <h3>COMMENT</h3>
       <form class="" action="index.html" method="post">
         <textarea name="name" rows="8" cols="80" placeholder="Add a comment..."></textarea>
         <input type="button" name="comment" value="Post Comment">
       </form>
     </div>
     <div class="comment">
-      <h3>0 COMMENTS</h3>
+        <h3>
+              {{ comments|length }} COMMENTS
+
+        </h3>
+      <ul>
+        {% for comment in comments %}
+          <li>
+             <h5>{{ comment.comment.username }}</h5>
+             <span>{{ comment.comment.created_at|date("m/d/Y") }}</span>
+             <p>{{ comment.comment.comment }}</p>
+               <ul>
+                 {% for sub in comment.subComment %}
+                   <li>
+                     <h5>{{sub.username}}</h5>
+                     <span>{{ sub.created_at }}</span>
+                      <p>{{ sub.comment }}</p>
+                   </li>
+                {% endfor %}
+               </ul>
+          </li>
+        {% endfor %}
+     </ul>
     </div>
   </section>
-
 
 {% endblock %}

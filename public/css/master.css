@@ -392,11 +392,13 @@ body{
   width: 90%;
   margin: auto;
   margin-top: 10px;
+  background: #fff;
+  border: solid 1px #d7d7d7;
 }
 .comment{
   background-color: #fff;
-  border: solid 1px #d7d7d7;
-  width: 60%;
+  width: 80%;
+  margin-left: 10%;
   padding-bottom: 60px;
 }
 .comment h3{
