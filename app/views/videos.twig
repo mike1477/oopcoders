@@ -58,12 +58,20 @@
   <section class="comment-outer">
     <div class="comment">
       <h3>COMMENT</h3>
-      <form class="" action="index.html" method="post">
-        <textarea name="name" rows="8" cols="80" placeholder="Add a comment..."></textarea>
-        <input type="button" name="comment" value="Post Comment">
+      <form class="post-comment" action="{{ base_url() }}/video/{{playing.id}}/{{playing.category_id}}" method="post">
+        {% if logged %}
+        <textarea name="post_textarea" rows="8" cols="80" placeholder="Add a comment..."></textarea>
+        <input type="submit" name="comment" value="Post Comment">
+        {% else %}
+        <p>Please sign in to leave comment.</p>
+        <textarea name="post_textarea" rows="8" cols="80" placeholder="Please sign in to post comment."></textarea>
+        <input type="submit" class="disabled" name="comment" value="Post Comment" disabled>
+        {% endif %}
+
+        {{ csrf.field | raw }}
       </form>
     </div>
-    <div class="comment">
+    <div class="comment" id="comment">
         <h3>
               {{ comments|length }} COMMENTS
 

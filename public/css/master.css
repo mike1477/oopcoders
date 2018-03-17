@@ -420,6 +420,10 @@ body{
 .comment form input:hover{
   background-color: #555;
 }
+.disabled{
+  background-color: green;
+  opacity: 0.5;
+}
 .comment textarea{
   background-color: #888;
   width: 80%;

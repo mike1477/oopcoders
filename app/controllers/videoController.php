@@ -37,6 +37,42 @@
 
       return $allComments;
     }
+    // Checks if video exists -- Returns true or false
+    function doesVideoExist($video_id){
+      if(!is_numeric($video_id)){
+        return false;
+      }
+      $video = Video::where('id', $video_id)->first();
+
+      if(!$video){
+        return false;
+      }else{
+        return true;
+      }
+    }
+
+    function postComment($request, $response, $args){
+
+      $textarea = htmlentities($request->getParam('post_textarea'));
+      if($this->doesVideoExist($args['video_id'])){
+         $video_id = $args['video_id'];
+      }else{
+        return;
+      }
+      $username = User::where('id', $_SESSION['user'])->first()->name;
+
+      // Add comment.
+     $user =  Comment::create([
+         'username' => $username,
+         'video_id' => $video_id,
+         'comment' => $textarea,
+       ]);
+
+      return $response->withRedirect($this->container->router->pathfor('video',
+      ['video_id' => $video_id,
+      'category_id' => $args['category_id'],
+     ]));
+    }
 
     function index($request, $response, $args){
 
@@ -57,6 +93,12 @@
          //Add another view to video
          $play_video->views = $play_video->views + 1;
          Video::where('id', $video_id)->update(['views' => $play_video->views]);
+
+         //If the user is logged in set a global user var so they can post comments
+         if(isset($_SESSION['user'])){
+           $logged = true;
+            $this->container->view->getEnvironment()->addGlobal('logged', $logged);
+        }
 
          $this->container->view->getEnvironment()->addGlobal('comments', $comments);
          $this->container->view->getEnvironment()->addGlobal('playing', $play_video);
