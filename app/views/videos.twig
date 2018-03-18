@@ -85,6 +85,23 @@
              <h5>{{ comment.comment.username }}</h5>
              <small>{{ comment.comment.created_at|date("m/d/Y") }}</small>
              <p>{{ comment.comment.comment }}</p>
+             <div class="reply-link">
+               <span>Reply</span>
+               <div class="reply-form" style="height:0px; opacity:0">
+                 <form class="post-comment" action="{{ base_url() }}/reply/{{playing.id}}/{{playing.category_id}}/{{comment.comment.id}}" method="post">
+                   {% if logged %}
+                   <textarea name="post_textarea" rows="8" cols="80" placeholder="Add a comment..."></textarea>
+                   <input type="submit" name="comment" value="Post Comment">
+                   {% else %}
+                   <p>Please sign in to leave comment.</p>
+                   <textarea name="post_textarea" rows="8" cols="80" placeholder="Please sign in to post comment."></textarea>
+                   <input type="submit" class="disabled" name="comment" value="Post Comment" disabled>
+                   {% endif %}
+
+                   {{ csrf.field | raw }}
+                 </form>
+               </div>
+             </div>
                <ul>
                  {% for sub in comment.subComment %}
                    <li>

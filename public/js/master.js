@@ -74,4 +74,19 @@ $(document).ready(function(){
           ]
       });
 
+  $(".reply-link").click(function(){
+
+      if($(this).children("div").css("height") == "0px"){
+          $(this).children("div").animate({
+                height: '200px',
+                opacity : 1
+          });
+        }else{
+          $(this).children("div").animate({
+              height: '0px',
+              opacity : 0
+
+         });
+        }
+    });
 });
