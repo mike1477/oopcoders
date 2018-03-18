@@ -83,13 +83,13 @@
         {% for comment in comments %}
           <li>
              <h5>{{ comment.comment.username }}</h5>
-             <span>{{ comment.comment.created_at|date("m/d/Y") }}</span>
+             <small>{{ comment.comment.created_at|date("m/d/Y") }}</small>
              <p>{{ comment.comment.comment }}</p>
                <ul>
                  {% for sub in comment.subComment %}
                    <li>
                      <h5>{{sub.username}}</h5>
-                     <span>{{ sub.created_at }}</span>
+                     <small>{{ sub.created_at }}</small>
                       <p>{{ sub.comment }}</p>
                    </li>
                 {% endfor %}
