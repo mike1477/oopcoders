@@ -7,8 +7,8 @@
            <h2>{{playing.title}}</h2>
            <p>Published : {{playing.created_at}} - - {{playing.views}} Views</p>
            <div class="video-icons">
-             <a href="#"><i class="fab fa-github-alt"></i></a>
-             <a href="#"><i class="fab fa-youtube"></i></a>
+             <a href="https://github.com/mike1477" target="_blank"><i class="fab fa-github-alt"></i></a>
+             <a href="https://www.youtube.com/channel/UCqtKLBlLNC2Qn-ZfRPaFRZQ" target="_blank"><i class="fab fa-youtube"></i></a>
            </div>
          </header>
          <div class="video-outer">
@@ -49,10 +49,13 @@
     <div class="description-box">
         <h3>DESCRIPTION</h3>
         <p>{{playing.description}}</p>
-        <p>t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-    </div>
-    <div class="reference-links-box">
-        <h3>HELPFUL REFERENCES</h3>
+        <div class="helpful-links" >
+          {% for link in links %}
+           <p>
+             <a href="{{ link.address }}" target="_blank">{{link.name}}</a>
+           </p>
+          {% endfor %}
+        </div>
     </div>
   </section>
   <section class="comment-outer">

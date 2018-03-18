@@ -8,6 +8,7 @@
   use App\models\Category;
   use App\models\Comment;
   use App\models\Subcomment;
+  use App\models\Link;
 
   class videoController extends Controller
   {
@@ -71,7 +72,7 @@
       return $response->withRedirect($this->container->router->pathfor('video',
       ['video_id' => $video_id,
       'category_id' => $args['category_id'],
-     ]));
+     ]).'#comment');
     }
 
     function index($request, $response, $args){
@@ -79,6 +80,7 @@
          $video_id = $args['video_id'];
          $comments = $this->getAllComments($video_id);
          $category_videos = Video::where('category_id', $args['category_id'])->get();
+         $helpful_links = Link::where('video_id', $video_id)->get();
          $play_video;
          $slider_videos = [];
 
@@ -99,7 +101,7 @@
            $logged = true;
             $this->container->view->getEnvironment()->addGlobal('logged', $logged);
         }
-
+         $this->container->view->getEnvironment()->addGlobal('links', $helpful_links);
          $this->container->view->getEnvironment()->addGlobal('comments', $comments);
          $this->container->view->getEnvironment()->addGlobal('playing', $play_video);
          $this->container->view->getEnvironment()->addGlobal('slider_cat', $slider_videos);

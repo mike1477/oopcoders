@@ -217,12 +217,10 @@ body{
    height: 110.359px;
    background-repeat: no-repeat;
    background-size: auto 100%;
-
  }
  .light-slider li figure img{
    width:100%;
  }
-
  .background span{
    display: block;
    position: absolute;
@@ -385,6 +383,7 @@ body{
 #filler{
   height: 200px;
 }
+
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   Comment Section
 +++++++++++++*/
@@ -444,7 +443,7 @@ body{
   margin: auto;
   position: relative;
 }
-.description-outer div{
+.description-outer>div{
   background-color: #fff;
   border: solid 1px #d7d7d7;
   display: inline-block;
@@ -460,14 +459,13 @@ body{
 .description-box p{
  padding:10px;
 }
-.reference-links-box{
-  width:39%;
-  position: absolute;
-  top:0px;
-  right: 0px;
+.helpful-links{
+   border: none;
 }
-.reference-links-box h3{
-
+.helpful-links p{
+ margin-top: 0px;
+ margin-bottom: 0px;
+ padding:5px;
 }
 
 /* ++++++++++++
