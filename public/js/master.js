@@ -74,15 +74,15 @@ $(document).ready(function(){
           ]
       });
 
-  $(".reply-link").click(function(){
+  $(".reply-link span").click(function(){
 
-      if($(this).children("div").css("height") == "0px"){
-          $(this).children("div").animate({
+      if($(this).siblings("div").css("height") == "0px"){
+          $(this).siblings("div").animate({
                 height: '200px',
                 opacity : 1
           });
         }else{
-          $(this).children("div").animate({
+          $(this).siblings("div").animate({
               height: '0px',
               opacity : 0
 

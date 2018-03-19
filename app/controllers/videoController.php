@@ -52,6 +52,29 @@
       }
     }
 
+    function postCommentReply($request, $response, $args){
+      $comment_id = $args['comment_id'];
+      $textarea = htmlentities($request->getParam('post_reply_textarea'));
+      if($this->doesVideoExist($args['video_id'])){
+         $video_id = $args['video_id'];
+      }else{
+        return;
+      }
+      $username = User::where('id', $_SESSION['user'])->first()->name;
+
+      // Add comment.
+     $user =  Subcomment::create([
+         'username' => $username,
+         'comment_id' => $comment_id,
+         'comment' => $textarea,
+       ]);
+
+      return $response->withRedirect($this->container->router->pathfor('video',
+      ['video_id' => $video_id,
+      'category_id' => $args['category_id'],
+     ]).'#comment');
+    }
+
     function postComment($request, $response, $args){
 
       $textarea = htmlentities($request->getParam('post_textarea'));

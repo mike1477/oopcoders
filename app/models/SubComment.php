@@ -9,7 +9,7 @@ class Subcomment extends Model
 {
 
   protected $fillable = [
-         'comment'
+         'username','comment_id','comment'
       ];
 
 
