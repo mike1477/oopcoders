@@ -97,6 +97,38 @@
       'category_id' => $args['category_id'],
      ]).'#comment');
     }
+    //Delete comment and all subcomments
+    function deleteAllComments($request, $response, $args){
+
+       if(isset($_SESSION['user'])){
+         $comment_id = $args['comment_id'];
+         Subcomment::where('comment_id',$comment_id)->delete();
+         Comment::where('id',$comment_id)->delete();
+         return $response->withRedirect($this->container->router->pathfor('video',
+         ['video_id' => $args['video_id'],
+         'category_id' => $args['category_id'],
+        ]).'#comment');
+       }
+      return $response->withRedirect($this->container->router->pathfor('video',
+      ['video_id' => $args['video_id'],
+      'category_id' => $args['category_id'],
+      ]).'#comment');
+    }
+    //Delete sub comment
+    function deleteSubComment($request, $response, $args){
+        if(isset($_SESSION['user'])){
+          $comment_id = $args['comment_id'];
+          Subcomment::where('id',$comment_id)->delete();
+          return $response->withRedirect($this->container->router->pathfor('video',
+          ['video_id' => $args['video_id'],
+          'category_id' => $args['category_id'],
+         ]).'#comment');
+        }
+       return $response->withRedirect($this->container->router->pathfor('video',
+       ['video_id' => $args['video_id'],
+       'category_id' => $args['category_id'],
+       ]).'#comment');
+    }
 
     function index($request, $response, $args){
 
@@ -106,6 +138,7 @@
          $helpful_links = Link::where('video_id', $video_id)->get();
          $play_video;
          $slider_videos = [];
+
 
          for ($x = 0; $x <= count($category_videos) - 1; $x++) {
            if($category_videos[$x]->id == $video_id){
@@ -122,8 +155,13 @@
          //If the user is logged in set a global user var so they can post comments
          if(isset($_SESSION['user'])){
            $logged = true;
+           $username = User::where('id', $_SESSION['user'])->first()->name;
             $this->container->view->getEnvironment()->addGlobal('logged', $logged);
-        }
+            $this->container->view->getEnvironment()->addGlobal('user', $username);
+         }
+
+
+
          $this->container->view->getEnvironment()->addGlobal('links', $helpful_links);
          $this->container->view->getEnvironment()->addGlobal('comments', $comments);
          $this->container->view->getEnvironment()->addGlobal('playing', $play_video);

@@ -7,6 +7,8 @@ $app->get('/', 'homeController:index')->setName('home');
 $app->get('/video/{video_id}/{category_id}', 'videoController:index')->setName('video');
 $app->post('/video/{video_id}/{category_id}', 'videoController:postComment');
 $app->post('/reply/{video_id}/{category_id}/{comment_id}', 'videoController:postCommentReply');
+$app->get('/deleteAllComments/{video_id}/{category_id}/{comment_id}', 'videoController:deleteAllComments');
+$app->get('/deleteSubComment/{video_id}/{category_id}/{comment_id}', 'videoController:deleteSubComment');
 
 $app->group('', function(){
   //Register new user

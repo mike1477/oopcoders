@@ -418,6 +418,22 @@ body{
   line-height: 1.4;
   text-indent: .8em;
 }
+.comment ul li{
+  position: relative;
+}
+.trash-outer{
+  float: right;
+  position: absolute;
+  right: 0px;
+}
+.trash-outer a{
+  display: inline-block;
+  background-color: red;
+  color:#fff;
+  padding: 5px;
+  border-radius: 2px;
+}
+
 .comment h3{
   color:#555;
   padding-left: 10px;

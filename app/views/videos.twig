@@ -82,6 +82,10 @@
       <ul>
         {% for comment in comments %}
           <li>
+            {% if user == comment.comment.username  %}
+               <span class="trash-outer"><a href="{{ base_url() }}/deleteAllComments/{{playing.id}}/{{playing.category_id}}/{{comment.comment.id}}" title="Delete this comment"><i class="fas fa-trash-alt"></i></a></span>
+            {% endif %}
+
              <h5>{{ comment.comment.username }}</h5>
              <small>{{ comment.comment.created_at|date("m/d/Y") }}</small>
              <p>{{ comment.comment.comment }}</p>
@@ -105,6 +109,9 @@
                <ul>
                  {% for sub in comment.subComment %}
                    <li>
+                     {% if user == sub.username  %}
+                        <span class="trash-outer"><a href="{{ base_url() }}/deleteSubComment/{{playing.id}}/{{playing.category_id}}/{{sub.id}}" title="Delete this comment"><i class="fas fa-trash-alt"></i></a></span>
+                     {% endif %}
                      <h5>{{sub.username}}</h5>
                      <small>{{ sub.created_at }}</small>
                       <p>{{ sub.comment }}</p>
