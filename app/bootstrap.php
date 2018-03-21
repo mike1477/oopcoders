@@ -78,6 +78,10 @@
     $container['videoController'] = function($container){
      return new \App\controllers\videoController($container);
     };
+    // Add videoController instance to container
+    $container['searchController'] = function($container){
+     return new \App\controllers\searchController($container);
+    };
     // Add authController instance to container
     $container['authController'] = function($container){
      return new \App\controllers\authController($container);

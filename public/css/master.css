@@ -587,3 +587,20 @@ body{
 .flash-success{
   background-color:#6e9c40;
 }
+/* ++++++++++++
+  Search page
++++++++++++++*/
+.search_results section{
+  width:70%;
+  margin: auto;
+  padding: 20px;
+  border: solid 1px #d7d7d7;
+}
+.search_results section h2{
+  color: #555;
+  border-bottom: solid 1px #d7d7d7;
+}
+.search_results section ul li{
+  list-style-type: none;
+  border-bottom: solid 1px #d7d7d7;
+}

@@ -3,9 +3,10 @@
        <a href="{{path_for('home')}}">OOPCoders <i class="fas fa-angle-right"></i></a>
      </div>
      <div class="search-outer">
-       <form class="search" action="" method="post">
-         <input type="search" name="search" id="search" placeholder="Search">
-        <button type="button" name="button" id="header-search-button"><i class="fas fa-search"></i></button>
+       <form class="search" action="{{ base_url() }}/searchp" method="post">
+         <input type="search" name="searchp" id="search" placeholder="Search Videos">
+        <button type="submit" name="button" id="header-search-button"><i class="fas fa-search"></i></button>
+        {{ csrf.field | raw }}
        </form>
      </div>
      {% if auth.check %}
@@ -22,3 +23,6 @@
      </div>
      {% endif %}
 </header>
+<div id="output">
+
+</div>

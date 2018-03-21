@@ -1,0 +1,27 @@
+{% extends "templates/app.twig" %}
+
+{% block content %}
+
+<div class="search_results">
+
+  {% if search_results %}
+  <section>
+    <h2>Search Results</h2>
+    <ul>
+      {% for result in search_results %}
+           <li>
+               <h4>{{ result.tag|e }}</h4>
+               <p><a href="{{ result.link|e }}">{{ result.link|e }}</a></p>
+             </li>
+       {% endfor %}
+   </ul>
+  </section>
+  {% else %}
+  <section>
+    <h2>No Videos found. Please try different search query.</h2>
+  </section>
+  {% endif %}
+
+</div>
+
+{% endblock %}
