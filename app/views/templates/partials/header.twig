@@ -4,10 +4,14 @@
      </div>
      <div class="search-outer">
        <form class="search" action="{{ base_url() }}/searchp" method="post">
-         <input type="search" name="searchp" id="search" placeholder="Search Videos">
+         <input type="search" name="searchp" id="search" placeholder="Search Videos" onkeydown="searchq()" autocomplete="off">
         <button type="submit" name="button" id="header-search-button"><i class="fas fa-search"></i></button>
-        {{ csrf.field | raw }}
        </form>
+       <div class="search_results" style="display: none">
+         <ul>
+          
+         </ul>
+       </div>
      </div>
      {% if auth.check %}
      <div class="profile-container">

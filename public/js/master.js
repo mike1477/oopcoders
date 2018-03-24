@@ -90,5 +90,16 @@ $(document).ready(function(){
         }
     });
 
+  $( "form" ).on( "submit", function( event ) {
+    $(this).append('<input type="hidden" name="csrf_name" value="' + getcsrf().name + '"><input type="hidden" name="csrf_value" value="' + getcsrf().value + '">');
+   });
+
+  $(".container").click(function(){
+
+     $(".login-slide-outer").animate({
+           width: '0px'
+     });
+     $(".search_results").css("display","none");
+  });
 
 });

@@ -10,13 +10,14 @@
 
      public function __invoke($request, $response, $next)
      {
-      //Attach the tokens to the view
-       $this->container->view->getEnvironment()->addGlobal('csrf', [
-          'field' => '
-          <input type="hidden" name="' . $this->container->csrf->getTokenNameKey() . '" value="' . $this->container->csrf->getTokenName() . '" >
-          <input type="hidden" name="' . $this->container->csrf->getTokenValueKey() . '" value="' . $this->container->csrf->getTokenValue() . '" >
-          ',
-    ]);
+  
+     $token = (object)[];
+     $token->nameKey = $this->container->csrf->getTokenNameKey();
+     $token->name = $this->container->csrf->getTokenName();
+     $token->valueKey = $this->container->csrf->getTokenValueKey();
+     $token->value = $this->container->csrf->getTokenValue();
+
+     $this->container->view->getEnvironment()->addGlobal('csrf',  json_encode($token));
 
       $response = $next($request, $response);
       return $response;
