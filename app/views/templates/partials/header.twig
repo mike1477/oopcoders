@@ -9,24 +9,38 @@
        </form>
        <div class="search_results" style="display: none">
          <ul>
-          
+
          </ul>
        </div>
+     </div>
+     <div class="cell-search-outer">
+       <button type="button" name="button"><i class="fas fa-search"></i></button>
      </div>
      {% if auth.check %}
      <div class="profile-container">
        <a id="profile">
-        <span class="user-icon"><i class="far fa-user"></i></span> <span>{{ auth.user.name }}</span>
+        <span class="user-icon"><i class="far fa-user"></i></span> <span class="user-text">{{ auth.user.name }}</span>
        </a>
      </div>
      {% else %}
      <div class="profile-container">
        <a id="profile">
-        <span class="user-icon"><i class="far fa-user"></i></span> <span> Sign In</span>
+        <span class="user-icon"><i class="far fa-user"></i></span> <span class="user-text"> Sign In</span>
        </a>
      </div>
      {% endif %}
+     <div class="cell-search-input" style="display:none">
+       <form class="search" action="{{ base_url() }}/searchp" method="post">
+         <input type="search" name="searchp" placeholder="Search Videos" autocomplete="off">
+       </form>
+       <div class="search_results" style="display: none">
+         <ul>
+
+         </ul>
+       </div>
+     </div>
 </header>
+
 <div id="output">
 
 </div>

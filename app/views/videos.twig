@@ -31,12 +31,14 @@
                 </div>
               </a>
             </figure>
-            <div class="content">
-              <h4>{{cat.title}}</h4>
-              <div>
-                <p>Published : {{cat.created_at}}</p>
-                <p>{{cat.views}} Views</p>
-              </div>
+            <div class="vertical-content">
+              <section>
+                <h4>{{cat.title}}</h4>
+                <div>
+                  <p>Published : {{ cat.created_at|date("m/d/Y") }}</p>
+                  <p>{{cat.views}} Views</p>
+                </div>
+              </section>
             </div>
           </li>
           {% endfor %}

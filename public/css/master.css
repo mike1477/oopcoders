@@ -8,628 +8,1180 @@ background: #1b1d21;
 font-family: Helvetica,Arial,sans-serif;
     background: #f5f5f5;
 */
+  *{
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: 100;
+  }
+  input{
+    border:none;
+  }
+  body{
+    background-color: #f5f5f5;
+    line-height: 1;
+    overflow-x: hidden;
+  }
+  .container{
+    border:solid red 1px;
+    padding-top:90px;
+  }
+  /* ++++++++++++
+      Header
+  +++++++++++++*/
+  #main-header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10001;
+    width: auto;
+    height: 76px;
+    border-bottom: solid 1px #d7d7d7;
+    background: #fff;
+    padding-left:30px;
+    padding-right:30px;
+  }
+  #main-header .logo{
+    width:25%;
+    display: inline-block;
+    padding-top: 10px;
+  }
+  #main-header .logo a{
+    font-size: 1.3em;
+    color: #6e9c40;
+    padding-top:10px;
+    padding-bottom:10px;
+    display: inline-block;
+    text-decoration: none;
+  }
+  #main-header .logo a:hover{
+    color:#888;
+  }
+  #main-header .logo i{
+    padding-left: 10px;
+    font-size: 100;
+    font-size:25px;
+  }
+  #main-header .search-outer{
+    width:58%;
+    display: inline-block;
+  }
+  #main-header .search-outer form{
+    width:100%;
+    position: relative;
+  }
+  #main-header .search-outer form button{
+    border:none;
+    background-color: #fff;
+    font-size: 1.5em;
+    font-weight: 100;
+    color:#888;
+  }
+  #main-header .search-outer form input{
+    height: 40px;
+    font-size: 1.2em;
+    width:80%;
+    color:#888;
+    border-left: solid 1px #d7d7d7;
+    text-indent: 10px;
+  }
+ .search-outer .search_results{
+    background-color: #fff;
+    position: absolute;
+    width: 45%;
+    margin-top:20px;
+  }
+  .search_results ul{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .search_results ul li{
+    list-style-type: none;
+    background-color: #f5f5f5;
+    margin-top:3px;
+    color:#555;
+  }
+  .search_results ul li a{
+    color:#555;
+    display: inline-block;
+    padding : 10px;
+    text-decoration: none;
+  }
+  .search_results ul li a:hover{
+    color:#fff;
+  }
+  .search_results ul li:hover{
+    background-color:#555;
+  }
+  #main-header .profile-container{
+    width: 15%;
+    display: inline-block;
+    text-align:right;
+    padding-top:20px;
+    border-left: solid 1px #d7d7d7;
+    height: 56px;
+  }
+  #main-header .profile-container span{
+    margin-right: 10px;
+  }
+  #main-header .profile-container a{
+    text-decoration: none;
+    color:#888;
+  }
+  #main-header .profile-container a:hover{
+    color: #6e9c40;
+  }
+  .user-icon{
+    font-size: 1.8em;
+  }
+  .cell-search-outer{
+    display: none;
+  }
+  /* ++++++++++++
+    Home page login form
+  +++++++++++++*/
 
-*{
-  font-family: Helvetica,Arial,sans-serif;
-  font-weight: 100;
-}
-input{
-  border:none;
-}
-body{
-  background-color: #f5f5f5;
-  line-height: 1;
-  overflow-x: hidden;
-}
-.container{
-  padding-top:90px;
-}
-/* ++++++++++++
-    Header
-+++++++++++++*/
-#main-header{
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 10001;
-  width: auto;
-  height: 76px;
-  border-bottom: solid 1px #d7d7d7;
-  background: #fff;
-  padding-left:30px;
-  padding-right:30px;
-}
-#main-header .logo{
-  width:25%;
-  display: inline-block;
-  padding-top: 10px;
-}
-#main-header .logo a{
-  font-size: 1.3em;
-  color: #6e9c40;
-  padding-top:10px;
-  padding-bottom:10px;
-  display: inline-block;
-  text-decoration: none;
-}
-#main-header .logo a:hover{
-  color:#888;
-}
-#main-header .logo i{
-  padding-left: 10px;
-  font-size: 100;
-  font-size:25px;
-}
-#main-header .search-outer{
-  width:58%;
-  display: inline-block;
-}
-#main-header .search-outer form{
-  width:100%;
-  position: relative;
-}
-#main-header .search-outer form button{
-  border:none;
-  background-color: #fff;
-  font-size: 1.5em;
-  font-weight: 100;
-  color:#888;
-}
-#main-header .search-outer form input{
-  height: 40px;
-  font-size: 1.2em;
-  width:80%;
-  color:#888;
-  border-left: solid 1px #d7d7d7;
-  text-indent: 10px;
-}
-.search-outer .search_results{
-  background-color: #fff;
-  position: absolute;
-  width: 45%;
-  margin-top:20px;
-}
-.search_results ul{
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.search_results ul li{
-  list-style-type: none;
-  background-color: #f5f5f5;
-  margin-top:3px;
-  color:#555;
-}
-.search_results ul li a{
-  color:#555;
-  display: inline-block;
-  padding : 10px;
-  text-decoration: none;
-}
-.search_results ul li a:hover{
-  color:#fff;
-}
-.search_results ul li:hover{
-  background-color:#555;
-}
-#main-header .profile-container{
-  width: 15%;
-  display: inline-block;
-  text-align:right;
-  padding-top:20px;
-  border-left: solid 1px #d7d7d7;
-  height: 56px;
-}
-#main-header .profile-container span{
-  margin-right: 10px;
-}
-#main-header .profile-container a{
-  text-decoration: none;
-  color:#888;
-}
-#main-header .profile-container a:hover{
-  color: #6e9c40;
-}
-.user-icon{
-  font-size: 1.8em;
-}
-/* ++++++++++++
-  Home page login form
-+++++++++++++*/
+  .profile-icon-outer{
+    font-size: 100px;
+    text-align:center;
+    background-color:#ccc;
+    border-radius: 100%;
+    padding:20px;
+    width:145px;
+    margin-left: 75px;
+    margin-top: 20px;
+    color:rgba(255,255,255,1);
+  }
+  .login-inputs{
+    margin-top:20px;
+    margin-bottom:10px;
+    width:100%;
+    height: 40px;
+    font-size: 20px;
+    border: solid 1px #d7d7d7;
+    text-indent: 1em;
+  }
+   #submit-button{
+    width:100%;
+    font-size: 20px;
+    padding-top:5px;
+    padding-bottom:5px;
+  }
+  .login-slide-outer{
+    z-index: 101;
+  }
+  .login-slide-outer form{
+    width: 70%;
+    margin-left:15%;
+  }
+  .rememberMe{
+    text-align: left;
+    color:green;
+    margin-bottom:20px;
+  }
+  .forgot-password{
+    margin-top:40px;
+    margin-bottom:30px;
+  }
+  .forgot-password a{
+    margin-right:10px;
+  }
+  .close{
+    color: #6e9c40;
+    text-align:left;
+    margin-left:20px;
+    margin-top:20px;
+    font-size:30px;
+  }
+  .close span:hover{
+    color:#555;
+  }
+  .logout-form a{
+    display: block;
+    background-color:#6e9c40;
+    padding:10px 20px;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .logout-form a:hover{
+    background-color: #555;
+    color: #fff;
+  }
+  /* ++++++++++++
+    Home page slider
+  +++++++++++++*/
+  .light-slider-outer{
+    width: 95%;
+    margin: auto;
+  }
+  .light-slider-outer>div{
+    margin-top: 20px;
+  }
+  .light-slider-outer h3{
+    color: #555;
+  }
+  .light-slider h4{
+    fort-size: .6em;
+    margin-top: 0px;
+  }
+  .light-slider{
+  	list-style: none outside none;
+  	padding-left: 0;
+    margin: 0px;
+    height: 220px !important;
+   }
+   .light-slider li{
+     position: relative;
+     height: 220px;
 
-.profile-icon-outer{
-  font-size: 100px;
-  text-align:center;
-  background-color:#ccc;
-  border-radius: 100%;
-  padding:20px;
-  width:145px;
-  margin-left: 75px;
-  margin-top: 20px;
-  color:rgba(255,255,255,1);
-}
-.login-inputs{
-  margin-top:20px;
-  margin-bottom:10px;
-  width:100%;
-  height: 40px;
-  font-size: 20px;
-  border: solid 1px #d7d7d7;
-  text-indent: 1em;
-}
- #submit-button{
-  width:100%;
-  font-size: 20px;
-  padding-top:5px;
-  padding-bottom:5px;
-}
-.login-slide-outer{
-  z-index: 101;
-}
-.login-slide-outer form{
-  width: 70%;
-  margin-left:15%;
-}
-.rememberMe{
-  text-align: left;
-  color:green;
-  margin-bottom:20px;
-}
-.forgot-password{
-  margin-top:40px;
-  margin-bottom:30px;
-}
-.forgot-password a{
-  margin-right:10px;
-}
-.close{
-  color: #6e9c40;
-  text-align:left;
-  margin-left:20px;
-  margin-top:20px;
-  font-size:30px;
-}
-.close span:hover{
-  color:#555;
-}
-/* ++++++++++++
-  Home page slider
-+++++++++++++*/
-.light-slider-outer{
-  width: 95%;
-  margin: auto;
-}
-.light-slider-outer>div{
-  margin-top: 20px;
-}
-.light-slider-outer h3{
-  color: #555;
-}
-.light-slider h4{
-  fort-size: .6em;
-  margin-top: 0px;
-}
-.light-slider{
-	list-style: none outside none;
-	padding-left: 0;
-  margin: 0px;
-  height: 220px !important;
- }
- .light-slider li{
-   position: relative;
-   height: 220px;
+   }
+   .light-slider>li>div{
+     padding:10px;
+     background-color: #fff;
+     height: 100%;
+   }
+   .publish-views{
+     position: absolute;
+     bottom: 0px;
+   }
+   .publish-views p{
+     font-size: .9em;
+     color: #888;
+     margin-bottom:1px;
+     margin-top:2px;
+   }
+   .light-slider li figure{
+     width:100%;
+     margin: auto;
+   }
+   .light-slider li figure a{
+     position: relative;
+     width:100%;
+     display: block;
+     height: 110.359px;
+     background-repeat: no-repeat;
+     background-size: auto 100%;
+   }
+   .light-slider li figure img{
+     width:100%;
+   }
+   .background span{
+     display: block;
+     position: absolute;
+     color:rgba(255,255,255,0);
+     background-color: rgba(255,255,255,0);
+     -webkit-transition: background-color 1s, color 1s; /* Safari */
+      transition: background-color 1s, color 1s;
+     top: 0px;
+     left:0px;
+     right:0px;
+     bottom:0px;
+     font-size: 4em;
+     display: block;
+     margin: auto;
+     text-align: center;
+     padding-top:20px;
+   }
+   .background span:hover{
+     color:rgba(255,255,255,.9);
+     background-color: rgba(255,255,255,.5);
+   }
+   .background p{
+     background-color:#000;
+     color:#fff;
+     padding:1px 3px;
+     width: 50px;
+     text-align: center;
+     margin-left: 5px;
+   }
+   /* +++++++++++++++++++++++++++++=====================================================================
+     video page
+   +++++++++++++++++++++++++++++++=====================================================================*/
+   .display-outer{
+     width: 90%;
+     height: 550px;
+     margin: auto;
+     position: relative;
+   }
+   .video-container{
+     position: absolute;
+     display: inline-block;
+     width: 60%;
+     height: 520px;
+   }
+   .video-container header{
+     background-color: #fff;
+     padding: 10px 0px;
+     margin-top: 10px;
+     border: solid 1px #d7d7d7;
+   }
+   .video-container header h2{
+     font-size: 1.8em;
+     margin-top: 0px;
+     margin-bottom: 0px;
+   }
+   .video-container header p{
+     color : #888;
+     display: inline-block;
+     width:50%;
+   }
+   .video-outer{
+     width: 100%;
+     margin-top: 10px;
+     background-color:#fff;
+   }
+   .video-icons{
+     width: 48%;
+     display: inline-block;
+     text-align: right;
+   }
+   .video-icons a{
+     color: #888;
+     font-size: 1.5em;
+   }
+   .video-icons a:hover{
+     color: #6e9c40;
+   }
+   /* ++++++++++++
+     video page vertical slider
+   +++++++++++++*/
+  .vertical-light-slider-outer{
+     position: absolute;
+     right: 0px;
+     top:0px;
+      width : 39%;
+   }
+  .vertical-light-slider li{
+     border-bottom: solid 1px #d7d7d7;
+   }
+  .vertical-light-slider li figure{
+     width:50%;
+     height: 100%;
+     margin: auto;
+     display: inline-block;
+   }
+  .vertical-light-slider li figure a{
+     height: 100%;
+     width: 100%;
+     display: inline-block;
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+     position: relative;
+   }
+  .vertical-content{
+    float: right;
+    width: 49%;
+    height: 100%;
+     position: relative;
+   }
+  .vertical-content section{
+     padding:10px;
+     height: 80%;
+   }
+  .vertical-content section div{
+     position: absolute;
+     bottom:0px;
+   }
+  .vertical-content h4{
+     margin-top: 0px;
+     font-size: 1.1em;
+   }
+  .vertical-content p{
+     margin: 0px;
+     margin-bottom:2px;
+     font-size: .9em;
+     color:#555;
+   }
+  .background-vertical{
+     position: absolute;
+     right: 0px;
+     top:0px;
+     left:0px;
+     bottom:0px;
+   }
+  .background-vertical>span{
+     display: block;
+     position: absolute;
+     color:rgba(255,255,255,0);
+     background-color: rgba(255,255,255,0);
+     -webkit-transition: background-color 1s, color 1s;
+      transition: background-color 1s, color 1s;
+      top: 0px;
+      left:0px;
+     right:0px;
+     bottom:0px;
+     font-size: 4em;
+     margin: auto;
+     text-align: center;
+     padding-top:20px;
+   }
+  .background-vertical>span:hover{
+     color:rgba(255,255,255,.9);
+     background-color: rgba(255,255,255,.5);
+   }
+  .background-vertical p{
+     background-color:#000;
+     color:#fff;
+     padding:1px 3px;
+     width: 50px;
+     text-align: center;
+     margin-left: 5px;
+   }
 
- }
- .light-slider>li>div{
+  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Comment Section
+  +++++++++++++*/
+  .comment-outer{
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    background: #fff;
+    border: solid 1px #d7d7d7;
+  }
+  .comment{
+    background-color: #fff;
+    width: 80%;
+    margin-left: 10%;
+    padding-bottom: 60px;
+  }
+  .comment ul{
+    list-style-type: none;
+  }
+  .comment ul li h5{
+    color:#6e9c40;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  .comment ul li small{
+    color:#555;
+  }
+  .comment ul li p{
+    color:#555;
+    font-size: 1em;
+    word-spacing: 1px;
+    line-height: 1.4;
+    text-indent: .8em;
+  }
+  .comment ul li{
+    position: relative;
+  }
+  .trash-outer{
+    float: right;
+    position: absolute;
+    right: 0px;
+  }
+  .trash-outer a{
+    display: inline-block;
+    background-color: red;
+    color:#fff;
+    padding: 5px;
+    border-radius: 2px;
+  }
+
+  .comment h3{
+    color:#555;
+    padding-left: 10px;
+    border-bottom: solid 1px #d7d7d7;
+  }
+  .comment form{
+    margin:auto;
+  }
+  .comment form input{
+    float: right;
+    margin-right: 10%;
+    margin-top: 10px;
+    padding:10px;
+    background-color: #6e9c40;
+    color: #fff;
+  }
+  .comment form input:hover{
+    background-color: #555;
+  }
+  .disabled{
+    background-color: green;
+    opacity: 0.5;
+  }
+  .comment textarea{
+    background-color: #888;
+    width: 80%;
+    margin-left: 10%;
+  }
+  .comments{
+    margin-top:40px;
+    background-color: #fff;
+  }
+  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Description Section
+  +++++++++++++*/
+  .description-outer{
+    width: 90%;
+    margin: auto;
+    position: relative;
+  }
+  .description-outer>div{
+    background-color: #fff;
+    border: solid 1px #d7d7d7;
+    display: inline-block;
+  }
+  .description-outer div h3{
+    color:#555;
+    padding-left: 10px;
+    border-bottom: solid 1px #d7d7d7;
+  }
+  .description-box{
+    width: 60%;
+  }
+  .description-box p{
    padding:10px;
-   background-color: #fff;
-   height: 100%;
- }
- .publish-views{
-   position: absolute;
-   bottom: 0px;
- }
- .publish-views p{
-   font-size: .9em;
-   color: #888;
-   margin-bottom:1px;
-   margin-top:2px;
- }
- .light-slider li figure{
-   width:100%;
-   margin: auto;
- }
- .light-slider li figure a{
-   position: relative;
-   width:100%;
-   display: block;
-   height: 110.359px;
-   background-repeat: no-repeat;
-   background-size: auto 100%;
- }
- .light-slider li figure img{
-   width:100%;
- }
- .background span{
-   display: block;
-   position: absolute;
-   color:rgba(255,255,255,0);
-   background-color: rgba(255,255,255,0);
-   -webkit-transition: background-color 1s, color 1s; /* Safari */
-    transition: background-color 1s, color 1s;
-   top: 0px;
-   left:0px;
-   right:0px;
-   bottom:0px;
-   font-size: 4em;
-   display: block;
-   margin: auto;
-   text-align: center;
-   padding-top:20px;
- }
- .background span:hover{
-   color:rgba(255,255,255,.9);
-   background-color: rgba(255,255,255,.5);
- }
- .background p{
-   background-color:#000;
-   color:#fff;
-   padding:1px 3px;
-   width: 50px;
-   text-align: center;
-   margin-left: 5px;
- }
- /* +++++++++++++++++++++++++++++=====================================================================
-   video page
- +++++++++++++++++++++++++++++++=====================================================================*/
- .display-outer{
-   width: 90%;
-   height: 550px;
-   margin: auto;
-   position: relative;
- }
- .video-container{
-   position: absolute;
-   display: inline-block;
-   width: 60%;
-   height: 520px;
- }
- .video-container header{
-   background-color: #fff;
-   padding: 10px 0px;
-   margin-top: 10px;
-   border: solid 1px #d7d7d7;
- }
- .video-container header h2{
-   font-size: 1.8em;
+  }
+  .helpful-links{
+     border: none;
+  }
+  .helpful-links p{
    margin-top: 0px;
    margin-bottom: 0px;
+   padding:5px;
+  }
+
+  /* ++++++++++++
+    Sign Up Section
+  +++++++++++++*/
+  .signup h2{
+    color:#6e9c40;
+    text-align: center;
+  }
+  .signup form{
+    border-top: solid 1px #d7d7d7;
+    width: 50%;
+    margin:auto;
+    padding:20px;
+  }
+  .input-container input{
+    width:84%;
+    display: inline-block;
+    height: 30px;
+    text-indent: 1em;
+    font-size: 1.1em;
+    color: #555;
+  }
+  .input-container label{
+    width: 15%;
+    margin-top:20px;
+    display: inline-block;
+    color:#555;
+    padding:5px 0px;
+  }
+  .form-button{
+    padding: auto;
+    text-align: center;
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+  .form-button button{
+    border:none;
+    background-color:#6e9c40;
+    padding: 10px 60px;
+    color:#fff;
+    font-size: 1.2em;
+  }
+  .form-button button:hover{
+    background-color: #555;
+    cursor: pointer;
+  }
+  .error-messages{
+    padding-top:5px;
+    padding-left:18%;
+    color:#bcb001;
+  }
+  .error-input{
+    border-top: solid 2px #888;
+    border-left: solid 2px #888;
+    border-bottom: solid 1px #bcb001;
+    border-right: solid 1px #bcb001;
+  }
+  /* ++++++++++++
+    Sign In Section
+  +++++++++++++*/
+  .checkbox-container{
+    text-align: center;
+    padding-top:10px;
+  }
+  .login-button{
+    margin-top:0px;
+  }
+  .login-forgot{
+    margin-top:0px;
+    text-align: center;
+  }
+  /* ++++++++++++
+    Flash messages section
+  +++++++++++++*/
+  .flash-outer{
+    width: 50%;
+    margin:auto;
+    padding: 1px 10px;
+    color:#fff;
+  }
+  .flash-warning{
+      background-color: #bcb001;
+  }
+  .flash-success{
+    background-color:#6e9c40;
+  }
+  /* ++++++++++++
+    Search page
+  +++++++++++++*/
+  .search_results section{
+    width:70%;
+    margin: auto;
+    padding: 20px;
+    border: solid 1px #d7d7d7;
+  }
+  .search_results section h2{
+    color: #555;
+    border-bottom: solid 1px #d7d7d7;
+  }
+  .search_results section ul li{
+    list-style-type: none;
+    border-bottom: solid 1px #d7d7d7;
+  }
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ MEDIUM SCREEN SIZE 992px - 1119.9px @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+@media (min-width: 992px ) and (max-width: 1119.9px) {
+
+  .container{
+    border:solid green 1px;
+    padding-top:60px;
+  }
+  /* ++++++++++++
+      Header
+  +++++++++++++*/
+  #main-header{
+    height: 60px;
+  }
+  #main-header .logo{
+    width:20%;
+    padding-top: 0px;
+  }
+  #main-header .logo a{
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+  #main-header .search-outer{
+    width:58%;
+  }
+  #main-header .search-outer form input{
+    height: 35px;
+  }
+  .search-outer .search_results{
+    width: 50%;
+    margin-top:10px;
+  }
+  #main-header .profile-container{
+    width: 20%;
+    padding-top:15px;
+    height: 45px;
+  }
+  #main-header .profile-container span{
+    margin-right: 10px;
+  }
+  /* ++++++++++++
+    Home page slider
+  +++++++++++++*/
+  .light-slider h4{
+   font-size: .9em;
+  }
+  .light-slider{
+    list-style-type: none;
+    height: 230px !important;
+   }
+  .light-slider li{
+     position: relative;
+     height: 220px;
+   }
+  .publish-views p{
+     font-size: .8em;
+     padding-bottom: 5px;
+   }
+   /* +++++++++++++++++++++++++++++=====================================================================
+     video page
+   +++++++++++++++++++++++++++++++=====================================================================*/
+   .display-outer{
+     width: 98%;
+     height: 500px;
+   }
+   .video-container{
+     width: 60%;
+     height: 500px;
+   }
+   .video-container header{
+     margin-top: 0px;
+   }
+   /* ++++++++++++
+     video page vertical slider
+   +++++++++++++*/
+
+  .vertical-content h4{
+     font-size: .9em;
+  }
+  .vertical-content p{
+     font-size: .8em;
+  }
+
+  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Comment Section
+  +++++++++++++*/
+  .comment-outer{
+    width: 98%;
+    margin: auto;
+    margin-top:10px;
+  }
+  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Description Section
+  +++++++++++++*/
+  .description-outer{
+    width: 98%;
+  }
+  /* ++++++++++++
+    Sign Up Section
+  +++++++++++++*/
+  .input-container input{
+    width:80%;
+  }
+  .input-container label{
+    width: 19%;
+  }
+
  }
- .video-container header p{
-   color : #888;
-   display: inline-block;
-   width:50%;
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ SMALL SCREEN SIZE 789px - 991.1px @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+@media (min-width: 789px) and (max-width: 991.1px) {
+  .container{
+    border:solid yellow 1px;
+    padding-top:40px;
+  }
+  /* ++++++++++++
+      Header
+  +++++++++++++*/
+  #main-header{
+    height: 50px;
+  }
+  #main-header .logo{
+    width:20%;
+    padding-top: 0px;
+  }
+  #main-header .logo a{
+    padding-top:10px;
+    padding-bottom:10px;
+    font-size: 1.2em;
+  }
+  #main-header .search-outer{
+    width:50%;
+  }
+  #main-header .search-outer form input{
+    height: 35px;
+    width: 85%;
+    font-size: 1.1em;
+  }
+  .search-outer .search_results{
+    width: 55%;
+    margin-top:10px;
+  }
+  #main-header .profile-container{
+    width: 25%;
+    padding-top:0px;
+    height: 40px;
+  }
+  #main-header .profile-container span{
+    margin-right: 10px;
+  }
+  .user-icon{
+    font-size: 1.6em;
+  }
+
+   /* +++++++++++++++++++++++++++++=====================================================================
+     video page
+   +++++++++++++++++++++++++++++++=====================================================================*/
+   .display-outer{
+     width: 98%;
+     height: 500px;
+     margin: auto;
+   }
+   .video-container{
+     width: 74%;
+     height: 500px;
+   }
+   .video-container header p{
+     width:70%;
+   }
+   .video-icons{
+     width: 25%;
+   }
+   /* ++++++++++++
+     video page vertical slider
+   +++++++++++++*/
+  .vertical-light-slider-outer{
+      width : 25%;
+   }
+  .vertical-light-slider li{
+    padding-top:10px;
+    padding-bottom:10px;
+    position: relative;
+    height: 250px;
+    border: none;
+  }
+  .vertical-light-slider li figure{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    display: block;
+    width:100%;
+    margin: auto;
+    height: 100px;
+  }
+  .vertical-light-slider li figure a{
+    display: block;
+    width:100%;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+  }
+  .vertical-content{
+    position: absolute;
+    right: 0px;
+    left:  0px;
+    bottom: 0px;
+    top:105px;
+    width:90%;
+    display: block;
+    height: 100px;
+  }
+  .vertical-content h4{
+     margin-bottom:5px;
+     font-size: .9em;
+   }
+  .background-vertical span{
+    right:0px;
+  }
+  .vertical-content section div{
+     bottom:10px;
+   }
+
+  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Comment Section
+  +++++++++++++*/
+  .comment-outer{
+    width: 98%;
+  }
+  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Description Section
+  +++++++++++++*/
+  .description-outer{
+    width: 98%;
+    background-color: #fff;
+    margin-top: 20px;
+  }
+  .description-box{
+    width: 80%;
+    padding-left:10%;
+    padding-right: 10%;
+  }
+  /* ++++++++++++
+    Sign Up Section
+  +++++++++++++*/
+  .signup form{
+    width: 70%;
+  }
+  /* ++++++++++++
+    Sign In Section
+  +++++++++++++*/
+  .checkbox-container{
+    text-align: center;
+    padding-top:10px;
+  }
+  .login-button{
+    margin-top:0px;
+  }
+  .login-forgot{
+    margin-top:0px;
+    text-align: center;
+  }
+  /* ++++++++++++
+    Flash messages section
+  +++++++++++++*/
+  .flash-outer{
+    width: 80%;
+  }
  }
- .video-outer{
-   width: 100%;
-   margin-top: 10px;
-   background-color:#fff;
- }
- .video-icons{
-   width: 48%;
-   display: inline-block;
-   text-align: right;
- }
- .video-icons a{
-   color: #888;
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ XSMALL SCREEN SIZE 768.9 - @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+@media (max-width: 768.9px) {
+  body{
+    margin: 0px;
+  }
+  .container{
+    border:solid black 1px;
+    padding-top:70px;
+  }
+  /* ++++++++++++
+      Header
+  +++++++++++++*/
+  #main-header{
+    padding-left:10px;
+    padding-right:10px;
+  }
+  #main-header .logo{
+    width:45%;
+  }
+  #main-header .search-outer{
+    display: none;
+  }
+ .cell-search-outer{
+    display: inline-block;
+    width: 35%;
+    text-align: right;
+  }
+ .cell-search-outer button{
+   border:none;
+   background-color: #fff;
    font-size: 1.5em;
+   font-weight: 100;
+   color:#888;
+   padding-top:10px;
+   padding-bottom:10px;
+   padding-left:20px;
+   padding-right: 20px;
+  }
+  .cell-search-input{
+    width:100%;
+    position: fixed;
+    border-top: solid #d7d7d7 1px;
+    border-bottom: solid #d7d7d7 1px;
+    margin-top: 10px;
+    left: 0px;
+  }
+  .cell-search-input form input{
+    height: 40px;;
+    width: 100%;
+    font-size: 1.1em;
+    text-indent: 1em;
+  }
+  #main-header .profile-container{
+    width: 15%;
+    float: right;
+    padding-left: 5px;
+    height: 49px;
+  }
+  #main-header .profile-container span{
+    margin-right: 5px;
+  }
+  .user-text{
+    display: none;
+  }
+  /* ++++++++++++
+    Home page login form
+  +++++++++++++*/
+
+  .profile-icon-outer{
+    display: none;
+  }
+  .close{
+    margin-left:20px;
+    margin-top:20px;
+  }
+   /* +++++++++++++++++++++++++++++=====================================================================
+     video page
+   +++++++++++++++++++++++++++++++=====================================================================*/
+   .display-outer{
+     width: 98%;
+     height: 100%;
+   }
+   .video-container{
+     position: relative;
+     display: block;
+     width: 100%;
+     height: 100%;
+   }
+   .video-container header{
+     background-color: #fff;
+     padding: 10px 0px;
+     margin-top: 10px;
+     border: solid 1px #d7d7d7;
+   }
+   .video-container header h2{
+     font-size: 1.8em;
+     margin-top: 0px;
+     margin-bottom: 0px;
+   }
+   .video-container header p{
+     color : #888;
+     display: inline-block;
+     width:50%;
+   }
+   .video-outer{
+     width: 100%;
+     margin-top: 10px;
+     background-color:#fff;
+   }
+   .video-icons{
+     width: 48%;
+     display: inline-block;
+     text-align: right;
+   }
+   .video-icons a{
+     color: #888;
+     font-size: 1.5em;
+   }
+   .video-icons a:hover{
+     color: #6e9c40;
+   }
+   /* ++++++++++++
+     video page vertical slider
+   +++++++++++++*/
+   .vertical-light-slider-outer{
+     position: relative;
+      width : 400px;;
+      margin: auto;
+   }
+  .vertical-light-slider li{
+    padding-top:10px;
+    padding-bottom:10px;
+    position: relative;
+  }
+  .vertical-light-slider li figure{
+    position: absolute;
+    left: 0px;
+    display: inline-block;
+    width:100%;
+    margin: auto;
+  }
+  .vertical-light-slider li figure a{
+    display: inline-block;
+    border: solid 1px #f5f5f5;
+    width:50%;
+    display: block;
+    height: 110.359px;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+  }
+  .content{
+    position: absolute;
+    right: 10px;
+    left: 250px;
+    bottom: -20px;
+    top:10px;
+    display: inline-block;
+    height: 110px;
+  }
+  .content h4{
+    margin-top: 2px;
+  }
+  .content div{
+    position: absolute;
+    bottom: 0px;
+    width:100%;
+  }
+  .content p{
+    margin-top:0px;
+    margin-bottom:2px;
+    font-size: .9em;
+    color:#555;
+  }
+  .background-vertical span{
+    display: block;
+    position: absolute;
+    color:rgba(255,255,255,0);
+    background-color: rgba(255,255,255,0);
+    -webkit-transition: background-color 1s, color 1s; /* Safari */
+     transition: background-color 1s, color 1s;
+    top: 0px;
+    left:0px;
+    right:50%;
+    bottom:0px;
+    font-size: 4em;
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding-top:20px;
+  }
+  .background-vertical span:hover{
+    color:rgba(255,255,255,.9);
+    background-color: rgba(255,255,255,.5);
+  }
+  .background-vertical p{
+    background-color:#000;
+    color:#fff;
+    padding:1px 3px;
+    width: 50px;
+    text-align: center;
+    margin-left: 5px;
+  }
+  #filler{
+    height: 200px;
+  }
+
+  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Comment Section
+  +++++++++++++*/
+  .comment-outer{
+    width: 100%;
+  }
+  .comment{
+    width: 100%;
+    margin-left: 0px;;
+    padding-bottom: 10px;
+  }
+  .comment>ul{
+    list-style-type: none;
+    padding-left: 5px;
+    border: solid blue 1px;
+  }
+
+  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    Description Section
+  +++++++++++++*/
+  .description-outer{
+    width: 100%;
+    margin-top:20px;
+  }
+  .description-box{
+    width: 100%;
+    padding-left:1%;
+    display: block;
+  }
+  /* ++++++++++++
+    Sign Up Section
+  +++++++++++++*/
+  .signup form{
+    width: 100%;
+    border: solid red 1px;
+  }
+  .input-container input{
+    width: 92%;
+    height: 40px;
+    text-indent: 1em;
+    font-size: 1.2em;
+  }
+  .input-container label{
+    width: 100%;
+    margin-top:20px;
+    margin-bottom:10px;
+    display: block;
+    color:#555;
+    padding:5px 0px;
+  }
+  /* ++++++++++++
+    Flash messages section
+  +++++++++++++*/
+  .flash-outer{
+    width: 100%;
+  }
+  /* ++++++++++++
+    Search page
+  +++++++++++++*/
+  .search_results section{
+    width:100%;
+    margin: auto;
+    padding: 10px;
+  }
  }
- .video-icons a:hover{
-   color: #6e9c40;
- }
- /* ++++++++++++
-   video page vertical slider
- +++++++++++++*/
- .vertical-light-slider-outer{
-   position: absolute;
-   right: 0px;
-   top:0px;
-    width : 39%;
- }
-.vertical-light-slider li{
-  padding-top:10px;
-  padding-bottom:10px;
-  position: relative;
-}
-.vertical-light-slider li figure{
-  position: absolute;
-  left: 0px;
-  display: inline-block;
-  width:100%;
-  margin: auto;
-}
-.vertical-light-slider li figure a{
-  display: inline-block;
-  border: solid 1px #f5f5f5;
-  width:50%;
-  display: block;
-  height: 110.359px;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-}
-.content{
-  position: absolute;
-  right: 10px;
-  left: 250px;
-  bottom: -20px;
-  top:10px;
-  display: inline-block;
-  height: 110px;
-}
-.content h4{
-  margin-top: 2px;
-}
-.content div{
-  position: absolute;
-  bottom: 0px;
-  width:100%;
-}
-.content p{
-  margin-top:0px;
-  margin-bottom:2px;
-  font-size: .9em;
-  color:#555;
-}
-.background-vertical span{
-  display: block;
-  position: absolute;
-  color:rgba(255,255,255,0);
-  background-color: rgba(255,255,255,0);
-  -webkit-transition: background-color 1s, color 1s; /* Safari */
-   transition: background-color 1s, color 1s;
-  top: 0px;
-  left:0px;
-  right:50%;
-  bottom:0px;
-  font-size: 4em;
-  display: block;
-  margin: auto;
-  text-align: center;
-  padding-top:20px;
-}
-.background-vertical span:hover{
-  color:rgba(255,255,255,.9);
-  background-color: rgba(255,255,255,.5);
-}
-.background-vertical p{
-  background-color:#000;
-  color:#fff;
-  padding:1px 3px;
-  width: 50px;
-  text-align: center;
-  margin-left: 5px;
-}
-#filler{
-  height: 200px;
-}
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  Comment Section
-+++++++++++++*/
-.comment-outer{
-  width: 90%;
-  margin: auto;
-  margin-top: 10px;
-  background: #fff;
-  border: solid 1px #d7d7d7;
-}
-.comment{
-  background-color: #fff;
-  width: 80%;
-  margin-left: 10%;
-  padding-bottom: 60px;
-}
-.comment ul{
-  list-style-type: none;
-}
-.comment ul li h5{
-  color:#6e9c40;
-  font-size: 1.2em;
-  margin-bottom: 5px;
-}
-.comment ul li small{
-  color:#555;
-}
-.comment ul li p{
-  color:#555;
-  font-size: 1em;
-  word-spacing: 1px;
-  line-height: 1.4;
-  text-indent: .8em;
-}
-.comment ul li{
-  position: relative;
-}
-.trash-outer{
-  float: right;
-  position: absolute;
-  right: 0px;
-}
-.trash-outer a{
-  display: inline-block;
-  background-color: red;
-  color:#fff;
-  padding: 5px;
-  border-radius: 2px;
-}
-
-.comment h3{
-  color:#555;
-  padding-left: 10px;
-  border-bottom: solid 1px #d7d7d7;
-}
-.comment form{
-  margin:auto;
-}
-.comment form input{
-  float: right;
-  margin-right: 10%;
-  margin-top: 10px;
-  padding:10px;
-  background-color: #6e9c40;
-  color: #fff;
-}
-.comment form input:hover{
-  background-color: #555;
-}
-.disabled{
-  background-color: green;
-  opacity: 0.5;
-}
-.comment textarea{
-  background-color: #888;
-  width: 80%;
-  margin-left: 10%;
-}
-.comments{
-  margin-top:40px;
-  background-color: #fff;
-}
-.comments h3{
-
-}
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  Description Section
-+++++++++++++*/
-.description-outer{
-  width: 90%;
-  margin: auto;
-  position: relative;
-}
-.description-outer>div{
-  background-color: #fff;
-  border: solid 1px #d7d7d7;
-  display: inline-block;
-}
-.description-outer div h3{
-  color:#555;
-  padding-left: 10px;
-  border-bottom: solid 1px #d7d7d7;
-}
-.description-box{
-  width: 60%;
-}
-.description-box p{
- padding:10px;
-}
-.helpful-links{
-   border: none;
-}
-.helpful-links p{
- margin-top: 0px;
- margin-bottom: 0px;
- padding:5px;
-}
-
-/* ++++++++++++
-  Sign Up Section
-+++++++++++++*/
-.signup h2{
-  color:#6e9c40;
-  text-align: center;
-}
-.signup form{
-  border-top: solid 1px #d7d7d7;
-  width: 50%;
-  margin:auto;
-  padding:20px;
-}
-.input-container input{
-  width:84%;
-  display: inline-block;
-  height: 30px;
-  text-indent: 1em;
-  font-size: 1.1em;
-  color: #555;
-}
-.input-container label{
-  width: 15%;
-  margin-top:20px;
-  display: inline-block;
-  color:#555;
-  padding:5px 0px;
-}
-.form-button{
-  padding: auto;
-  text-align: center;
-  margin-top:20px;
-  margin-bottom:20px;
-}
-.form-button button{
-  border:none;
-  background-color:#6e9c40;
-  padding: 10px 60px;
-  color:#fff;
-  font-size: 1.2em;
-}
-.form-button button:hover{
-  background-color: #555;
-  cursor: pointer;
-}
-.error-messages{
-  padding-top:5px;
-  padding-left:18%;
-  color:#bcb001;
-}
-.error-input{
-  border-top: solid 2px #888;
-  border-left: solid 2px #888;
-  border-bottom: solid 1px #bcb001;
-  border-right: solid 1px #bcb001;
-}
-/* ++++++++++++
-  Sign In Section
-+++++++++++++*/
-.checkbox-container{
-  text-align: center;
-  padding-top:10px;
-}
-.login-button{
-  margin-top:0px;
-}
-.login-forgot{
-  margin-top:0px;
-  text-align: center;
-}
-/* ++++++++++++
-  Flash messages section
-+++++++++++++*/
-.flash-outer{
-  width: 50%;
-  margin:auto;
-  padding: 1px 10px;
-  color:#fff;
-}
-.flash-warning{
-    background-color: #bcb001;
-}
-.flash-success{
-  background-color:#6e9c40;
-}
-/* ++++++++++++
-  Search page
-+++++++++++++*/
-.search_results section{
-  width:70%;
-  margin: auto;
-  padding: 20px;
-  border: solid 1px #d7d7d7;
-}
-.search_results section h2{
-  color: #555;
-  border-bottom: solid 1px #d7d7d7;
-}
-.search_results section ul li{
-  list-style-type: none;
-  border-bottom: solid 1px #d7d7d7;
-}

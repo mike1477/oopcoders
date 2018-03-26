@@ -1,15 +1,19 @@
 $(document).ready(function(){
 
   $("#profile").click(function(){
-    if($(".login-slide-outer").css("width") == "0px"){
+    var windowWidth = $( window ).width();
+
+    if($(".login-slide-outer").css("width") == "0px" && windowWidth > 500){
         $(".login-slide-outer").animate({
             width: '500px'
-
+        });
+      }else if ($(".login-slide-outer").css("width") == "0px" && windowWidth < 500) {
+        $(".login-slide-outer").animate({
+            width: windowWidth
         });
       }else{
         $(".login-slide-outer").animate({
             width: '0px'
-
         });
       }
   });
@@ -29,18 +33,26 @@ $(document).ready(function(){
         pager:false,
         responsive : [
             {
-                breakpoint:800,
+                breakpoint:1000,
                 settings: {
-                    item:3,
+                    item:4,
                     slideMove:1,
                     slideMargin:6,
                   }
             },
             {
-                breakpoint:480,
+                breakpoint:789,
+                settings: {
+                    item:3,
+                    slideMove:1
+                  }
+            },
+            {
+                breakpoint:500,
                 settings: {
                     item:2,
-                    slideMove:1
+                    slideMove:1,
+                    slideMargin:6,
                   }
             }
         ]
@@ -54,21 +66,33 @@ $(document).ready(function(){
           speed:600,
           pager:false,
           vertical: true,
-          verticalHeight: 540,
+          verticalHeight: 520,
           responsive : [
               {
-                  breakpoint:800,
+                  breakpoint:1119,
                   settings: {
-                      item:3,
+                      item:4,
                       slideMove:1,
                       slideMargin:6,
+                      verticalHeight: 450
                     }
               },
               {
-                  breakpoint:480,
+                  breakpoint:991,
                   settings: {
-                      item:2,
-                      slideMove:1
+                      item:3,
+                      slideMove:1,
+                      vThumbWidth: 190,
+                      verticalHeight: 500,
+                      vertical: true,
+                    }
+              },
+              {
+                  breakpoint:768,
+                  settings: {
+                      item:5,
+                      slideMove:5,
+                      verticalHeight: 520,
                     }
               }
           ]
@@ -101,5 +125,15 @@ $(document).ready(function(){
      });
      $(".search_results").css("display","none");
   });
+
+  $(".cell-search-outer").click(function(){
+    if($(".cell-search-input").css("display") == "none"){
+        $(".cell-search-input").css("display", "block");
+        $(".cell-search-input form input").focus();
+      }else{
+        $(".cell-search-input").css("display", "none");
+      }
+  });
+
 
 });

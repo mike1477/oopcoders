@@ -19,7 +19,7 @@
              <div>
                <h4>{{ video.title }}</h4>
                <div class="publish-views">
-                 <p>Published : {{ video.created_at }}</p>
+                 <p>Published : {{ video.created_at|date("m/d/Y") }}</p>
                  <p>{{video.views}} Views</p>
                </div>
              </div>
