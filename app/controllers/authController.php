@@ -3,7 +3,6 @@
   namespace App\controllers;
 
   use App\models\User;
-
   use Respect\Validation\Validator as v;
 
   class authController extends Controller
