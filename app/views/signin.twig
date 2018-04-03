@@ -21,14 +21,10 @@
       <small>{{ errors.password | first }}</small>
     </div>
     {% endif %}
-    <div class="checkbox-container">
-      <label for="rememberMe" class="rememberMe">Remember Me </label><input type="checkbox" name="rememberMe" value="" class="rememberMe"><br>
-    </div>
     <div class="form-button login-button">
       <button type="submit">Sign In</button>
     </div>
     <div class="forgot-password login-forgot">
-      <a href="forgot-password.php">Forgot Password</a>
       <a href="{{path_for('signup')}}">Register New Account</a>
     </div>
     {{ csrf.field | raw }}

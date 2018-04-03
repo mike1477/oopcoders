@@ -62,6 +62,7 @@
           $this->container->flash->addMessage('error', 'Incorrect sign in information. Please check the login information and try again.');
           return $response->withRedirect($this->container->router->pathFor('signin'));
         }
+
          // Send flash message to user
          $this->container->flash->addMessage('success', 'Welcome back ! , You are signed in.');
          return $response->withRedirect($this->container->router->pathFor('home'));

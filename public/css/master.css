@@ -21,7 +21,6 @@ font-family: Helvetica,Arial,sans-serif;
     overflow-x: hidden;
   }
   .container{
-    border:solid red 1px;
     padding-top:90px;
   }
   /* ++++++++++++
@@ -577,7 +576,7 @@ font-family: Helvetica,Arial,sans-serif;
   .form-button{
     padding: auto;
     text-align: center;
-    margin-top:20px;
+    margin-top:30px;
     margin-bottom:20px;
   }
   .form-button button{
@@ -608,9 +607,6 @@ font-family: Helvetica,Arial,sans-serif;
   .checkbox-container{
     text-align: center;
     padding-top:10px;
-  }
-  .login-button{
-    margin-top:0px;
   }
   .login-forgot{
     margin-top:0px;
@@ -652,7 +648,6 @@ font-family: Helvetica,Arial,sans-serif;
 @media (min-width: 992px ) and (max-width: 1119.9px) {
 
   .container{
-    border:solid green 1px;
     padding-top:60px;
   }
   /* ++++++++++++
@@ -758,7 +753,6 @@ font-family: Helvetica,Arial,sans-serif;
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ SMALL SCREEN SIZE 789px - 991.1px @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 @media (min-width: 789px) and (max-width: 991.1px) {
   .container{
-    border:solid yellow 1px;
     padding-top:40px;
   }
   /* ++++++++++++
@@ -900,9 +894,6 @@ font-family: Helvetica,Arial,sans-serif;
     text-align: center;
     padding-top:10px;
   }
-  .login-button{
-    margin-top:0px;
-  }
   .login-forgot{
     margin-top:0px;
     text-align: center;
@@ -920,7 +911,6 @@ font-family: Helvetica,Arial,sans-serif;
     margin: 0px;
   }
   .container{
-    border:solid black 1px;
     padding-top:70px;
   }
   /* ++++++++++++
